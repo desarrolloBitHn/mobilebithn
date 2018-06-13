@@ -1,0 +1,36 @@
+<!--
+  Generated template for the FetchRegistroDominioPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar color="s-light">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      Domínio
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding id="page1">
+  <h1 id="inicio-heading1" style="color:#000000;" >
+    Registro de domínio {{9.5 | currency}}
+  </h1>
+  <form id="inicio-form1">
+    <div id="inicio-markdown1" class="show-list-numbers-and-dots">
+      <p style="color:#000000;">
+        Las extensiones de domínio más populares {{buscador}}
+      </p>
+    </div>
+    <ion-searchbar placeholder="Buscar..." name="" id="inicio-search1" [(ngModel)]="buscador" [ngModelOptions]="{standalone: true}"></ion-searchbar>
+  </form>
+  <ion-list id="inicio-list2" *ngFor="let dominio of listadominio | myfilter: buscador">
+    <ion-item color="none" id="inicio-list-item7" (click)="detalleDominio(dominio)">
+      {{dominio.descripcion}}
+      <ion-note item-right></ion-note>
+      <ion-icon name="arrow-forward" item-right></ion-icon>
+    </ion-item>
+  </ion-list>
+</ion-content>
