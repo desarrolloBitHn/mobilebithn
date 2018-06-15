@@ -15,17 +15,17 @@ export class MyApp {
     rootPage:any = 'InicioPage';
 
 
-    pages: Array<{title: string, component: any}>;
+    pages: Array<{title: string, component: any, icon: string}>;
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
     this.pages = [
-      { title: 'Dominios', component: 'FetchDominiosPage', icon:'ios-at-outline'},
-      { title: 'Alojamientos', component: 'FetchAlojamientosPage' , icon:'apps'},
-      { title: 'Seguridad', component: 'SeguridadPage' , icon:'ios-lock-outline'},
-      { title: 'Nube', component: 'CloudPage' , icon:'cloud'},
+      { title: 'Dominios', component: 'FetchDominiosPage', icon:'appbithn-domainservice'},
+      { title: 'Alojamientos', component: 'FetchAlojamientosPage' , icon:'appbithn-server'},
+      { title: 'Seguridad', component: 'SeguridadPage' , icon:'appbithn-securityservice'},
+      { title: 'Nube', component: 'CloudPage' , icon:'appbithn-cloudserver'},
       { title: 'Correo', component: 'CorreoPage' , icon:'mail'},
-      { title: 'Constructor Sitios Web', component: 'SitioWebPage' , icon:'laptop'},
-      { title: 'Combos', component: 'FetchCombosPage' , icon:'pricetag'},
+      { title: 'Constructor Sitios Web', component: 'SitioWebPage' , icon:'appbithn-websiteservice'},
+      { title: 'Combos', component: 'FetchCombosPage' , icon:'appbithn-discount'},
       { title: 'Llamanos', component: 'FetchLlamanosPage' , icon:'call'}
     ];
 

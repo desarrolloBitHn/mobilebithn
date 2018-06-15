@@ -19,3 +19,54 @@
   text-align: left;
   font-size: 1.7rem;
 }
+
+
+ion-icon {
+    &[class*="appbithn-"] {
+        // Instead of using the font-based icons
+        // We're applying SVG masks
+        mask-size: contain;
+        mask-position: 50% 50%;
+        mask-repeat: no-repeat;
+        background: currentColor;
+        width: 1em;
+        height: 1em;
+    }
+    // custom icons
+    &[class*="appbithn-server"] {
+        mask-image: url(../assets/imgs/server.svg);
+    }
+    &[class*="appbithn-cloudserver"] {
+        mask-image: url(../assets/imgs/cloud.svg);
+    }
+    &[class*="appbithn-securityservice"] {
+        mask-image: url(../assets/imgs/security.svg);
+    }
+    &[class*="appbithn-domainservice"] {
+        mask-image: url(../assets/imgs/domain.svg);
+    }
+    &[class*="appbithn-websiteservice"] {
+        mask-image: url(../assets/imgs/website.svg);
+    }
+    &[class*="appbithn-discount"] {
+        mask-image: url(../assets/imgs/discount.svg);
+    }
+    &[class*="appbithn-mysql"] {
+        mask-image: url(../assets/imgs/mysql.svg);
+    }
+    &[class*="appbithn-php"] {
+        mask-image: url(../assets/imgs/php.svg);
+    }
+    &[class*="appbithn-drupal"] {
+        mask-image: url(../assets/imgs/drupal-logo.svg);
+    }
+    &[class*="appbithn-joomla"] {
+        mask-image: url(../assets/imgs/joomla.svg);
+    }
+    &[class*="appbithn-wordpress"] {
+        mask-image: url(../assets/imgs/wordpress.svg);
+    }
+    &[class*="appbithn-shopping-cart"] {
+        mask-image: url(../assets/imgs/shopping-cart.svg);
+    }
+}
