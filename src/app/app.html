@@ -9,6 +9,7 @@
   <ion-content id="side-menu21">
     <ion-list id="menu-list1">
       <ion-item color="none" menuClose="" *ngFor="let p of pages" on-click="openPage(p)" id="menu-list-item1">
+        <ion-icon name="{{p.icon}}"></ion-icon>
         {{p.title}}
       </ion-item>
     </ion-list>

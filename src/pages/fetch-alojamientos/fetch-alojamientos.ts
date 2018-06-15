@@ -15,7 +15,9 @@ import { IonicPage, NavController, NavParams, Nav } from 'ionic-angular';
 })
 export class FetchAlojamientosPage {
 
-  basedatos = [{
+  basedatos =
+  [
+    {
     "id": 1,
     "nombreproducto": "Alojamiento compartido Linux",
     "descripcion": "Perfecto para sitios webs más pequeños y blogs. Incluye cPanel, PHP, Apache y más",
@@ -280,6 +282,13 @@ export class FetchAlojamientosPage {
 
   Inicio(){
     this.nav.setRoot('InicioPage');
+  }
+
+  clickOpenCard(parametro){
+    if (!parametro) parametro = {};
+    this.navCtrl.push('DetalleAlojamientosPage', {
+      'item': parametro
+    });
   }
 
   ionViewDidLoad() {

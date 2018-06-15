@@ -14,17 +14,19 @@ export class MyApp {
   @ViewChild(Nav) nav: Nav;
     rootPage:any = 'InicioPage';
 
+
     pages: Array<{title: string, component: any}>;
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
     this.pages = [
-      { title: 'Dominios', component: 'FetchDominiosPage' },
-      { title: 'Alojamientos', component: 'FetchAlojamientosPage' },
-      { title: 'Seguridad', component: 'SeguridadPage' },
-      { title: 'Nube', component: 'CloudPage' },
-      { title: 'Constructor Sitios Web', component: 'SitioWebPage' },
-      { title: 'Combos', component: 'FetchCombosPage' },
-      { title: 'Llamanos', component: 'FetchLlamanosPage' }
+      { title: 'Dominios', component: 'FetchDominiosPage', icon:'ios-at-outline'},
+      { title: 'Alojamientos', component: 'FetchAlojamientosPage' , icon:'apps'},
+      { title: 'Seguridad', component: 'SeguridadPage' , icon:'ios-lock-outline'},
+      { title: 'Nube', component: 'CloudPage' , icon:'cloud'},
+      { title: 'Correo', component: 'CorreoPage' , icon:'mail'},
+      { title: 'Constructor Sitios Web', component: 'SitioWebPage' , icon:'laptop'},
+      { title: 'Combos', component: 'FetchCombosPage' , icon:'pricetag'},
+      { title: 'Llamanos', component: 'FetchLlamanosPage' , icon:'call'}
     ];
 
     platform.ready().then(() => {

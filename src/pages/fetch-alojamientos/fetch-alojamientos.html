@@ -9,33 +9,40 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>
-      Alojamientos
-    </ion-title>
   </ion-navbar>
 </ion-header>
 
 
-<ion-content padding>
-  <ion-fab top right edge>
-    <button ion-fab mini color="s-dark" (click)="Inicio()"><ion-icon name="home" ></ion-icon></button>
-  </ion-fab>
+  <ion-content >
+    <ion-fab top right edge>
+      <button ion-fab mini color="s-dark" (click)="Inicio()"><ion-icon name="home" ></ion-icon></button>
+    </ion-fab>
+    <div class="content" style="background-color: #14cba8;">
+      <h1>
+        Alojamientos
+      </h1>
+      <ion-card color="detalle1">
+        <img src="./assets/imgs/alojamiento1.png">
+      </ion-card>
+      <p>
+        Obtenga su Negocio en línea en una forma asequible
+      </p>
+    </div>
 
-
-  <div *ngFor="let servicio of basedatos">
-    <ion-card>
-      <ion-card-header>
-        <ion-item>
-          <h2 ion-header text-wrap>{{servicio.nombreproducto}}</h2>
-          <p>{{servicio.subtiposervicio}}</p>
-        </ion-item>
-      </ion-card-header>
-      <ion-card-content>
-        {{servicio.descripcion}}
-        <button ion-button block (click)="cardclick(servicio)" color="primary">Ver precios</button>
-      </ion-card-content>
-    </ion-card>
-  </div>
+    <div *ngFor="let servicio of basedatos">
+      <ion-card>
+        <ion-card-header>
+          <ion-item>
+            <h2 ion-header text-wrap>{{servicio.nombreproducto}}</h2>
+            <p>{{servicio.subtiposervicio}}</p>
+          </ion-item>
+        </ion-card-header>
+        <ion-card-content>
+          {{servicio.descripcion}}
+          <button ion-button block (click)="clickOpenCard(servicio)" color="primary">Ver precios</button>
+        </ion-card-content>
+      </ion-card>
+    </div>
 
 
 </ion-content>
