@@ -14,7 +14,48 @@
 
 
 <ion-content padding>
-  <h1 >{{item.nombreproducto}}</h1>
-  <h5>Tipo de servicio: {{item.tiposervicio}}</h5>
-<p>{{item.descripcion}}</p>
+  <div class="content" style="background:#64FFDA;">
+    <ion-card color="d1-light">
+
+      <ion-card-header>
+        <h1 style="text-align:center;">
+          {{item.nombreproducto}}
+        </h1>
+      </ion-card-header>
+      <ion-card-content>
+        <p>{{item.descripcion}}</p>
+      </ion-card-content>
+    </ion-card>
+  </div>
+
+  <div cards>
+    <div class="grid-full">
+      <ion-row>
+        <ion-col *ngFor="let plan of item.planes">
+          <ion-card >
+            <ion-card-header style="background-color: #212121;">
+              <h1 text-center style="color:#FFFFFF;"> {{plan.tipoplan}}</h1>
+            </ion-card-header>
+            <ion-card-content style="background-color: #000000;">
+              <!-- <ion-fab  edge>
+                <button ion-fab>
+                  <ion-icon name="pin"></ion-icon>
+                </button>
+              </ion-fab> -->
+              <p style="font-size:50px; color:#64FFDA;" text-center> {{plan.valor | currency}} </p>
+                      <div class="item item-body">
+                   <div class="show-list-numbers-and-dots">
+                     <p style="margin-top:0px;color:#000000;">
+                     </p>
+                   </div>
+                 </div>
+                 <button ion-button block color="light">Contizar ahora</button>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </div>
+  </div>
+
+
 </ion-content>

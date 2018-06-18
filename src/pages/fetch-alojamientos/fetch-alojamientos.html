@@ -15,7 +15,11 @@
 
   <ion-content >
     <ion-fab top right edge>
-      <button ion-fab mini color="s-dark" (click)="Inicio()"><ion-icon name="home" ></ion-icon></button>
+      <button ion-fab mini color="s-dark" ><ion-icon name="arrow-dropleft"></ion-icon></button>
+      <ion-fab-list side="left">
+     <button ion-fab (click)="Inicio()"><ion-icon name="ios-home-outline" ></ion-icon></button>
+     <button ion-fab><ion-icon name="ios-help"></ion-icon></button>
+   </ion-fab-list>
     </ion-fab>
     <div class="content" style="background:#64FFDA;">
       <ion-card color="d1-light">
