@@ -1387,12 +1387,14 @@ export class FetchAlojamientosPage {
     }
   ];
 
-  constructor(public nav: Nav, public navCtrl: NavController, public navParams: NavParams) {
+  constructor( public nav: Nav, public navCtrl: NavController, public navParams: NavParams) {
   }
 
   Inicio(){
     this.nav.setRoot('InicioPage');
   }
+
+
 
   clickOpenCard(parametro){
     if (!parametro) parametro = {};

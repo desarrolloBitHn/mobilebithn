@@ -10,7 +10,6 @@
     <button start ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Nube</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -20,6 +19,76 @@
   <ion-fab top right edge>
     <button ion-fab mini color="s-dark" (click)="Inicio()"><ion-icon name="home" ></ion-icon></button>
   </ion-fab>
+  <div class="content" style="background:#14cba8;">
+    <ion-card color="detalle1">
+      <h1 style="text-align:center;">
+        Alojamiento en la nube
+      </h1>
+    </ion-card>
+  </div>
+  <ion-card><img src="./assets/imgs/cloud1.png" style="width:80%;height:80%;"></ion-card>
+  <div class="container-fluid" style="background-color: #14cba8;">
+    <ion-card color="detalle1">
+      <ion-card-header >
+        <h1 style="text-align:center;" >
+          <ion-icon name="appbithn-mysql"></ion-icon>
+          <ion-icon name="appbithn-php"></ion-icon>
+          <ion-icon name="appbithn-drupal"></ion-icon>
+          <ion-icon name="appbithn-joomla"></ion-icon>
+          <ion-icon name="appbithn-wordpress"></ion-icon>
+          <ion-icon name="mail"></ion-icon>
+          <ion-icon name="appbithn-shopping-cart"></ion-icon>
+        </h1>
+      </ion-card-header>
+    </ion-card>
+  </div>
 
+  <div cards>
+    <div class="grid-full">
+      <ion-row >
+        <ion-col *ngFor="let plan of database.planes">
+          <ion-card >
+            <ion-card-header style="background-color: #212121;">
+              <h1 text-center style="color:#FFFFFF;">{{plan.tipoplan}}</h1>
+            </ion-card-header>
+            <ion-card-content style="background-color: #000000;">
+              <p style="font-size:50px; color:#64FFDA;" text-center> {{plan.valor | currency}} </p>
+                      <div class="item item-body">
+                   <div class="show-list-numbers-and-dots">
+                     <p style="margin-top:0px;color:#000000;">
+                     </p>
+                   </div>
+                 </div>
+                 <button ion-button block color="light">Contizar ahora</button>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+
+
+
+
+
+      <!--<ion-row *ngFor"let plan of database.planes">
+         <ion-col>
+          <ion-card>
+            <ion-card-header style="background-color: #212121;">
+              <h1 text-center style="color:#FFFFFF;">{{plan.tipoplan}}</h1>
+            </ion-card-header>
+            <ion-card-content style="background-color: #000000;">
+              <p style="font-size:50px; color:#64FFDA;" text-center> {{plan.valor | currency}} </p>
+                      <div class="item item-body">
+                   <div class="show-list-numbers-and-dots">
+                     <p style="margin-top:0px;color:#000000;">
+                     </p>
+                   </div>
+                 </div>
+                 <button ion-button block color="light">Contizar ahora</button>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+      </ion-row>  -->
+    </div>
+  </div>
 
 </ion-content>

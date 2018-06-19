@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, Nav } from 'ionic-angular';
 
 /**
  * Generated class for the DetailsRegistroDominioPage page.
@@ -15,8 +15,13 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class DetailsRegistroDominioPage {
   item;
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public nav: Nav, public navCtrl: NavController, public navParams: NavParams) {
     this.item = navParams.get('item');
+  }
+
+
+  Inicio(){
+    this.nav.setRoot('InicioPage');
   }
 
   ionViewDidLoad() {

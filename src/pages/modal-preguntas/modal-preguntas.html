@@ -7,12 +7,22 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>modal-preguntas</ion-title>
+     <button start ion-button outline color="p-light" (click)="cerrar()">Cerrar</button>
+     <!-- <ion-icon start class="back-button-icon" (click)="cerrar()"></ion-icon> -->
+    <ion-title></ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
+<h3>Preguntas Frecuentes</h3>
 
+ <ion-list no-lines *ngFor="let pregunta of item.preguntas">
+  <ion-item text-wrap>
+    <h2>{{pregunta.pregunta}}</h2>
+    <p>{{pregunta.respuesta}}</p>
+  </ion-item>
+
+</ion-list>
 </ion-content>

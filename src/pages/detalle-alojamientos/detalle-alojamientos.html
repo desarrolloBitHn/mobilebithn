@@ -11,11 +11,18 @@
   </ion-navbar>
 
 </ion-header>
-
-
 <ion-content padding>
-  <div class="content" style="background:#64FFDA;">
-    <ion-card color="d1-light">
+
+  <ion-fab top right edge>
+    <button ion-fab mini color="s-dark" ><ion-icon name="ios-arrow-dropdown-circle"></ion-icon></button>
+    <ion-fab-list>
+   <button ion-fab (click)="Inicio()"><ion-icon name="ios-home-outline" ></ion-icon></button>
+   <button ion-fab><ion-icon name="ios-help" (click)="preguntas(item)"></ion-icon></button>
+  </ion-fab-list>
+  </ion-fab>
+
+  <div class="content" style="background:#14cba8;">
+    <ion-card color="detalle1">
 
       <ion-card-header>
         <h1 style="text-align:center;">
@@ -56,6 +63,4 @@
       </ion-row>
     </div>
   </div>
-
-
 </ion-content>

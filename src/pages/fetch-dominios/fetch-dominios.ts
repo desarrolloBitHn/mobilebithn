@@ -16,63 +16,19 @@ import { CuerpomodalComponent } from '../../components/cuerpomodal/cuerpomodal';
 })
 export class FetchDominiosPage {
   buscador="";
-  listadominio=[
+  listadominio=
+  [
     {
       "id": 1,
-      "descripcion": ".biz",
-      "_1ano": 19.6,
-      "_2ano": 39.2,
-      "_3ano": 58.8,
-      "_5ano": 98,
-      "_10ano": 196
+      "descripcion": ".hn",
+      "_1ano": 57.5,
+      "_2ano": 115,
+      "_3ano": 172.5,
+      "_5ano": 287.5,
+      "_10ano": 575
     },
     {
       "id": 2,
-      "descripcion": ".blackfriday",
-      "_1ano": 150.38,
-      "_2ano": 300.76,
-      "_3ano": 451.14,
-      "_5ano": 751.9,
-      "_10ano": 1503.8
-    },
-    {
-      "id": 3,
-      "descripcion": ".bz",
-      "_1ano": 31.9,
-      "_2ano": 63.8,
-      "_3ano": 95.7,
-      "_5ano": 159.5,
-      "_10ano": 319
-    },
-    {
-      "id": 4,
-      "descripcion": ".ca",
-      "_1ano": 20.14,
-      "_2ano": 40.28,
-      "_3ano": 60.42,
-      "_5ano": 100.7,
-      "_10ano": 201.4
-    },
-    {
-      "id": 5,
-      "descripcion": ".co",
-      "_1ano": 11,
-      "_2ano": 53,
-      "_3ano": 95,
-      "_5ano": 179,
-      "_10ano": 0
-    },
-    {
-      "id": 6,
-      "descripcion": ".com",
-      "_1ano": 14.43,
-      "_2ano": 28.86,
-      "_3ano": 43.29,
-      "_5ano": 72.15,
-      "_10ano": 144.3
-    },
-    {
-      "id": 7,
       "descripcion": ".com.hn",
       "_1ano": 57.5,
       "_2ano": 115,
@@ -81,7 +37,7 @@ export class FetchDominiosPage {
       "_10ano": 575
     },
     {
-      "id": 8,
+      "id": 3,
       "descripcion": ".coop.hn",
       "_1ano": 57.5,
       "_2ano": 115,
@@ -90,7 +46,7 @@ export class FetchDominiosPage {
       "_10ano": 575
     },
     {
-      "id": 9,
+      "id": 4,
       "descripcion": ".edu.hn",
       "_1ano": 57.5,
       "_2ano": 115,
@@ -99,8 +55,8 @@ export class FetchDominiosPage {
       "_10ano": 575
     },
     {
-      "id": 10,
-      "descripcion": ".hn",
+      "id": 5,
+      "descripcion": ".net.hn",
       "_1ano": 57.5,
       "_2ano": 115,
       "_3ano": 172.5,
@@ -108,13 +64,67 @@ export class FetchDominiosPage {
       "_10ano": 575
     },
     {
-      "id": 11,
-      "descripcion": ".hn",
+      "id": 6,
+      "descripcion": ".org.hn",
       "_1ano": 57.5,
       "_2ano": 115,
       "_3ano": 172.5,
       "_5ano": 287.5,
       "_10ano": 575
+    },
+    {
+      "id": 6,
+      "descripcion": ".biz",
+      "_1ano": 19.6,
+      "_2ano": 39.2,
+      "_3ano": 58.8,
+      "_5ano": 98,
+      "_10ano": 196
+    },
+    {
+      "id": 7,
+      "descripcion": ".blackfriday",
+      "_1ano": 150.38,
+      "_2ano": 300.76,
+      "_3ano": 451.14,
+      "_5ano": 751.9,
+      "_10ano": 1503.8
+    },
+    {
+      "id": 8,
+      "descripcion": ".bz",
+      "_1ano": 31.9,
+      "_2ano": 63.8,
+      "_3ano": 95.7,
+      "_5ano": 159.5,
+      "_10ano": 319
+    },
+    {
+      "id": 9,
+      "descripcion": ".ca",
+      "_1ano": 20.14,
+      "_2ano": 40.28,
+      "_3ano": 60.42,
+      "_5ano": 100.7,
+      "_10ano": 201.4
+    },
+    {
+      "id": 10,
+      "descripcion": ".co",
+      "_1ano": 11,
+      "_2ano": 53,
+      "_3ano": 95,
+      "_5ano": 179,
+      "_10ano": 0
+    },
+    {
+      "id": 11,
+      "descripcion": ".com",
+      "_1ano": 14.43,
+      "_2ano": 28.86,
+      "_3ano": 43.29,
+      "_5ano": 72.15,
+      "_10ano": 144.3
     },
     {
       "id": 12,
@@ -134,7 +144,6 @@ export class FetchDominiosPage {
       "_5ano": 279.54,
       "_10ano": 0
     },
-
     {
       "id": 14,
       "descripcion": ".net",
@@ -146,15 +155,6 @@ export class FetchDominiosPage {
     },
     {
       "id": 15,
-      "descripcion": ".net.hn",
-      "_1ano": 57.50,
-      "_2ano": 115,
-      "_3ano": 172.5,
-      "_5ano": 287.5,
-      "_10ano": 575
-    },
-    {
-      "id": 16,
       "descripcion": ".online",
       "_1ano": 52.06,
       "_2ano": 104.12,
@@ -163,7 +163,7 @@ export class FetchDominiosPage {
       "_10ano": 520.6
     },
     {
-      "id": 17,
+      "id": 16,
       "descripcion": ".org",
       "_1ano": 19.24,
       "_2ano": 38.48,
@@ -172,16 +172,7 @@ export class FetchDominiosPage {
       "_10ano": 192.4
     },
     {
-      "id": 18,
-      "descripcion": ".org.hn",
-      "_1ano": 57.5,
-      "_2ano": 115,
-      "_3ano": 172.5,
-      "_5ano": 287.5,
-      "_10ano": 575
-    },
-    {
-      "id": 18,
+      "id": 17,
       "descripcion": ".tv",
       "_1ano": 41.98,
       "_2ano": 83.96,
@@ -190,7 +181,7 @@ export class FetchDominiosPage {
       "_10ano": 419.8
     },
     {
-      "id": 19,
+      "id": 18,
       "descripcion": ".us",
       "_1ano": 16.8,
       "_2ano": 33.6,

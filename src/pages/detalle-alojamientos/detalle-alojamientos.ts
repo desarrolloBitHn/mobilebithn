@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ModalController, Nav } from 'ionic-angular';
 
 /**
  * Generated class for the DetalleAlojamientosPage page.
@@ -15,8 +15,17 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class DetalleAlojamientosPage {
 item;
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor( public modalCtrl: ModalController, public navCtrl: NavController, public navParams: NavParams, public nav: Nav) {
     this.item = navParams.get('item');
+  }
+
+  preguntas(_item){
+    const modal = this.modalCtrl.create('ModalPreguntasPage', { item: _item });
+    modal.present();
+  }
+
+  Inicio(){
+    this.nav.setRoot('InicioPage');
   }
 
   ionViewDidLoad() {

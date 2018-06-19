@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ViewController  } from 'ionic-angular';
 
 /**
  * Generated class for the ModalPreguntasPage page.
@@ -14,11 +14,18 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'modal-preguntas.html',
 })
 export class ModalPreguntasPage {
-
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+item;
+  constructor(public viewCtrl: ViewController, public navCtrl: NavController, public navParams: NavParams) {
+    this.item = navParams.get('item');
   }
 
+  cerrar() {
+   let data = { 'foo': 'bar' };
+   this.viewCtrl.dismiss();
+ }
+
   ionViewDidLoad() {
+    console.log(this.item);
     console.log('ionViewDidLoad ModalPreguntasPage');
   }
 
