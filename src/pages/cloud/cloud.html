@@ -17,7 +17,11 @@
 
 <ion-content padding>
   <ion-fab top right edge>
-    <button ion-fab mini color="s-dark" (click)="Inicio()"><ion-icon name="home" ></ion-icon></button>
+    <button ion-fab mini color="s-dark" ><ion-icon name="ios-arrow-dropdown-circle"></ion-icon></button>
+    <ion-fab-list>
+   <button ion-fab (click)="Inicio()"><ion-icon name="ios-home-outline" ></ion-icon></button>
+   <button ion-fab><ion-icon name="ios-help" (click)="preguntas(database)"></ion-icon></button>
+  </ion-fab-list>
   </ion-fab>
   <div class="content" style="background:#14cba8;">
     <ion-card color="detalle1">
@@ -59,35 +63,13 @@
                      </p>
                    </div>
                  </div>
-                 <button ion-button block color="light">Contizar ahora</button>
+                 <button ion-button block color="primary" (click)="cotizar()">
+                   <label style="font-color:white;">Cotizar</label>
+                 </button>
             </ion-card-content>
           </ion-card>
         </ion-col>
       </ion-row>
-
-
-
-
-
-      <!--<ion-row *ngFor"let plan of database.planes">
-         <ion-col>
-          <ion-card>
-            <ion-card-header style="background-color: #212121;">
-              <h1 text-center style="color:#FFFFFF;">{{plan.tipoplan}}</h1>
-            </ion-card-header>
-            <ion-card-content style="background-color: #000000;">
-              <p style="font-size:50px; color:#64FFDA;" text-center> {{plan.valor | currency}} </p>
-                      <div class="item item-body">
-                   <div class="show-list-numbers-and-dots">
-                     <p style="margin-top:0px;color:#000000;">
-                     </p>
-                   </div>
-                 </div>
-                 <button ion-button block color="light">Contizar ahora</button>
-            </ion-card-content>
-          </ion-card>
-        </ion-col>
-      </ion-row>  -->
     </div>
   </div>
 

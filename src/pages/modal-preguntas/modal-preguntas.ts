@@ -20,7 +20,7 @@ item;
   }
 
   cerrar() {
-   let data = { 'foo': 'bar' };
+   // let data = { 'foo': 'bar' };
    this.viewCtrl.dismiss();
  }
 

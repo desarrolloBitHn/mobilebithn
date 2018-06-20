@@ -1394,8 +1394,6 @@ export class FetchAlojamientosPage {
     this.nav.setRoot('InicioPage');
   }
 
-
-
   clickOpenCard(parametro){
     if (!parametro) parametro = {};
     this.navCtrl.push('DetalleAlojamientosPage', {

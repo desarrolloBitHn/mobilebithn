@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, Nav} from 'ionic-angular';
+import { IonicPage, NavController, NavParams, Nav, ModalController} from 'ionic-angular';
 
 /**
  * Generated class for the CloudPage page.
@@ -181,13 +181,20 @@ database =
     ]
   };
 
-  constructor(public nav: Nav, public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public modalCtrl: ModalController, public nav: Nav, public navCtrl: NavController, public navParams: NavParams) {
   }
 
 
 
   Inicio(){
     this.nav.setRoot('InicioPage');
+  }
+
+  cotizar(){}
+
+  preguntas(_item){
+    const modal = this.modalCtrl.create('ModalPreguntasPage', { item: _item });
+    modal.present();
   }
 
   ionViewDidLoad() {
