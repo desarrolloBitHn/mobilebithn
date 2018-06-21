@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, Nav } from 'ionic-angular';
+import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
 
 /**
  * Generated class for the CorreoPage page.
@@ -14,8 +15,11 @@ import { IonicPage, NavController, NavParams, Nav } from 'ionic-angular';
   templateUrl: 'correo.html',
 })
 export class CorreoPage {
-  tipoCorreo;
-
+    tipoCorreo;
+    item;
+    valor = 0;
+    meses= [{"id":1, "mes":"1"}, {"id":2, "mes":"3"}, {"id":3, "mes":"6"}, {"id":4, "mes":"12"}];
+    formulario: FormGroup;
 
     basedatos =
     [
@@ -349,16 +353,43 @@ export class CorreoPage {
         ]
       }
     ];
-  constructor(public nav: Nav, public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public nav: Nav, public navCtrl: NavController, public navParams: NavParams, public formBuilder: FormBuilder) {
+    this.formulario = this.crearMiForm();
+    this.item = this.basedatos[0];
+    this.tipoCorreo = 1;
   }
 
   Inicio(){
     this.nav.setRoot('InicioPage');
   }
 
+  guardar(){
+    console.log(this.myForm.value);
+  }
+
   ionViewDidLoad() {
-    this.tipoCorreo = 1;
     console.log('ionViewDidLoad CorreoPage');
+  }
+
+  onSegmentChange(valor){
+    for(var i=0; i < this.basedatos.length; i++){
+      if(this.basedatos[i].id == valor) {
+        this.item = this.basedatos[i];
+      }
+
+    }
+  }
+
+  onChangeOpction(valor){
+    console.log(valor);
+  }
+
+  private crearMiForm(){
+    return this.formBuilder.group({
+      cuentas: new FormControl(),
+      duracion: new FormControl(),
+      total: new FormControl()
+    });
   }
 
 }

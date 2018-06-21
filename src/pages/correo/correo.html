@@ -20,8 +20,8 @@
   <ion-fab top right edge>
     <button ion-fab mini color="s-dark" (click)="Inicio()"><ion-icon name="home" ></ion-icon></button>
   </ion-fab>
-      <ion-segment [(ngModel)]="tipoCorreo" color="p-dark">
-        <ion-segment-button value="1">
+      <ion-segment [(ngModel)]="tipoCorreo" color="p-dark" (ionChange)="onSegmentChange($event._value)">
+        <ion-segment-button value="1" >
           G Suite
         </ion-segment-button>
         <ion-segment-button value="2">
@@ -39,12 +39,34 @@
           <div class="content" style="background:#14cba8;">
             <ion-card color="detalle1">
               <h1 style="text-align:center;">
-                Correo G Suite
+              {{item.nombre}}
               </h1>
             </ion-card>
           </div>
           <ion-card><img src="./assets/imgs/correo1.png" style="width:100%;height:100%;"></ion-card>
 
+
+          <form [formGroup]="formulario" (ngSubmit)="guardar()">
+          <ion-list>
+            <ion-item>
+              <ion-icon name="ios-mail-outline" item-start></ion-icon>
+              <ion-label stacked>Cuentas:</ion-label>
+              <ion-input formControlName="cuentas" type="text" placeholder="Cuentas"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-icon name="calendar" item-start></ion-icon>
+              <ion-label stacked>Duración:</ion-label>
+              <ion-select  formControlName="duracion"  placeholder="Duración" >
+                <ion-option *ngFor="let mes of meses" [value]="mes.id">{{mes.mes}} mes(-es) <ion-badge *ngIf="mes.mes != 12">{{item.planes[0].valor | currency}}</ion-badge> <ion-badge *ngIf="mes.mes == 12">{{item.planes[0].duracion[0].descuento | currency}}</ion-badge> </ion-option>
+              </ion-select>
+            </ion-item>
+            <ion-item>
+              <ion-icon name="git-network" item-start></ion-icon>
+              <ion-label stacked>Resultado:</ion-label>
+              <ion-input formControlName="total" type="text" placeholder="Resultado"></ion-input>
+            </ion-item>
+          </ion-list>
+          </form>
 
 
           <ion-fab right >
@@ -56,14 +78,53 @@
         </div>
 
         <div *ngSwitchCase="2">
-          2
+
+          <div class="content" style="background:#14cba8;">
+            <ion-card color="detalle1">
+              <h1 style="text-align:center;">
+                 {{item.nombre}}
+              </h1>
+            </ion-card>
+          </div>
+          <ion-card><img src="./assets/imgs/correo2.png" style="width:100%;height:100%;"></ion-card>
+
+
+          <form [formGroup]="formulario" (ngSubmit)="guardar()">
+          <ion-list>
+            <ion-item>
+              <ion-icon name="ios-mail-outline" item-start></ion-icon>
+              <ion-label stacked>Cuentas:</ion-label>
+              <ion-input formControlName="cuentas" type="text" placeholder="Cuentas"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-icon name="calendar" item-start></ion-icon>
+              <ion-label stacked>Duración:</ion-label>
+              <ion-select  formControlName="duracion"  placeholder="Duración" >
+                <ion-option *ngFor="let mes of meses"  [value]="mes.id"  (ionChange)="onChangeOpction($event)"> {{mes.mes}} mes(-es) <ion-badge>{{valor | currency}}</ion-badge>  </ion-option>
+              </ion-select>
+            </ion-item>
+            <ion-item>
+              <ion-icon name="git-network" item-start></ion-icon>
+              <ion-label stacked>Resultado:</ion-label>
+              <ion-input formControlName="total" type="text" placeholder="Resultado"></ion-input>
+            </ion-item>
+          </ion-list>
+          </form>
+
+          <ion-fab right >
+            <button ion-fab mini color="s-dark"><ion-icon name="arrow-up"></ion-icon></button>
+            <ion-fab-list side="top">
+              <button ion-fab><ion-icon name="ios-help"></ion-icon></button>
+            </ion-fab-list>
+          </ion-fab>
+
         </div>
 
         <div *ngSwitchCase="3">
           <div class="content" style="background:#14cba8;">
             <ion-card color="detalle1">
               <h1 style="text-align:center;">
-                Correo de Negocios
+                 {{item.nombre}}
               </h1>
             </ion-card>
           </div>
