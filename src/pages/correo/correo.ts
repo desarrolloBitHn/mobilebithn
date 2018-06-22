@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, Nav } from 'ionic-angular';
-import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
+import { IonicPage, NavController, NavParams, Nav, ModalController } from 'ionic-angular';
+import { FormBuilder, FormGroup, Validators, FormControl, NgForm } from '@angular/forms';
 
 /**
  * Generated class for the CorreoPage page.
@@ -17,8 +17,11 @@ import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms'
 export class CorreoPage {
     tipoCorreo;
     item;
+    mes;
+    total=0;
+    cuentas = 0;
     valor = 0;
-    meses= [{"id":1, "mes":"1"}, {"id":2, "mes":"3"}, {"id":3, "mes":"6"}, {"id":4, "mes":"12"}];
+    meses= [{"id":1, "mes":1}, {"id":2, "mes":3}, {"id":3, "mes":6}, {"id":4, "mes":12}];
     formulario: FormGroup;
 
     basedatos =
@@ -31,6 +34,51 @@ export class CorreoPage {
           {
             "id": 1,
             "inicio": 1,
+            "final": 500,
+            "duracion": [
+              {
+                "id": 1,
+                "meses": "12",
+                "descuento": 5.75
+              }
+            ],
+            "unidad": "mes",
+            "valor": 6.24,
+            "descripcion": []
+          },
+          {
+            "id": 2,
+            "inicio": 6,
+            "final": 25,
+            "duracion": [
+              {
+                "id": 1,
+                "meses": "12",
+                "descuento": 5.75
+              }
+            ],
+            "unidad": "mes",
+            "valor": 6.24,
+            "descripcion": []
+          },
+          {
+            "id": 3,
+            "inicio": 26,
+            "final": 49,
+            "duracion": [
+              {
+                "id": 1,
+                "meses": "12",
+                "descuento": 5.75
+              }
+            ],
+            "unidad": "mes",
+            "valor": 6.24,
+            "descripcion": []
+          },
+          {
+            "id": 4,
+            "inicio": 50,
             "final": 500,
             "duracion": [
               {
@@ -353,7 +401,7 @@ export class CorreoPage {
         ]
       }
     ];
-  constructor(public nav: Nav, public navCtrl: NavController, public navParams: NavParams, public formBuilder: FormBuilder) {
+  constructor(public modalCtrl: ModalController ,public nav: Nav, public navCtrl: NavController, public navParams: NavParams, public formBuilder: FormBuilder) {
     this.formulario = this.crearMiForm();
     this.item = this.basedatos[0];
     this.tipoCorreo = 1;
@@ -363,8 +411,35 @@ export class CorreoPage {
     this.nav.setRoot('InicioPage');
   }
 
-  guardar(){
-    console.log(this.myForm.value);
+  // guardar(){
+  //   console.log(this.formulario.value);
+  // }
+
+  preguntas(_item){
+    const modal = this.modalCtrl.create('ModalPreguntasPage', { item: _item });
+    modal.present();
+  }
+
+  onChangeInput(valor){
+    if(this.item.id != 1) {
+      this.rangoValor();
+    }
+
+    var iteracion: number = this.mes - 1;
+
+    if (this.mes != null){
+      if (this.item.id == 1){
+        if (this.mes == 12){
+          this.valor = 5.72
+        }else {
+          this.valor = 6.24;
+        }
+        this.total = (this.cuentas * this.valor )*this.mes;
+      } else {
+        this.rangoValor();
+      }
+      this.total = (this.cuentas * this.valor )*this.mes;
+    }
   }
 
   ionViewDidLoad() {
@@ -372,6 +447,9 @@ export class CorreoPage {
   }
 
   onSegmentChange(valor){
+    this.total = 0;
+    this.valor = 0;
+    this.cuentas = 0;
     for(var i=0; i < this.basedatos.length; i++){
       if(this.basedatos[i].id == valor) {
         this.item = this.basedatos[i];
@@ -380,8 +458,41 @@ export class CorreoPage {
     }
   }
 
-  onChangeOpction(valor){
-    console.log(valor);
+  rangoValor(){
+    if(this.cuentas < 6) {
+      this.valor = this.item.planes[0].valor;
+    } else if (this.cuentas < 26) {
+      this.valor = this.item.planes[1].valor;
+    } else if (this.cuentas < 50){
+      this.valor = this.item.planes[2].valor;
+    } else if (this.cuentas >= 50) {
+      this.valor = this.item.planes[3].valor;
+    }
+  }
+
+  onChangeOpction1(mes){
+    var _mes = this.intMes(mes);
+    this.mes = _mes;
+    if (_mes == 12){
+      this.total = (this.cuentas * 5.75 )*_mes;
+    }else {
+      this.total = (this.cuentas * 6.24)*_mes;
+    }
+  }
+
+  onChangeOpction(mes){
+    var _mes = this.intMes(mes);
+    this.mes = _mes;
+    this.total = (this.cuentas * this.valor)*_mes;
+  }
+
+  intMes(mes){
+    for(var i = 0; i < this.meses.length; i++){
+      if (this.meses[i].id == mes){
+        return this.meses[i].mes;
+        break;
+      }
+    }
   }
 
   private crearMiForm(){
