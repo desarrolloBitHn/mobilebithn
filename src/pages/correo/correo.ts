@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, Nav, ModalController } from 'ionic-angular';
-import { FormBuilder, FormGroup, Validators, FormControl, NgForm } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators, FormControl, NgForm, Validators } from '@angular/forms';
 
 /**
  * Generated class for the CorreoPage page.
@@ -497,7 +497,7 @@ export class CorreoPage {
 
   private crearMiForm(){
     return this.formBuilder.group({
-      cuentas: new FormControl(),
+      cuentas: new FormControl(0, Validators.max(500) ),
       duracion: new FormControl(),
       total: new FormControl()
     });

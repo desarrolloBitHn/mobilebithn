@@ -47,6 +47,7 @@
 
 
           <form [formGroup]="formulario" (ngSubmit)="guardar()">
+            <span  style="color:red;" *ngIf="formulario.controls['cuentas'].hasError('max')">La Cantidad de cuentas debe ser menor a 500</span>
           <ion-list>
             <ion-item>
               <ion-icon name="ios-mail-outline" item-start></ion-icon>
@@ -66,6 +67,10 @@
               <ion-input formControlName="total" type="text" value="{{total | currency}}" disabled="true" ></ion-input>
             </ion-item>
           </ion-list>
+
+          <div padding>
+            <button ion-button round full type="submit" [disabled]="!formulario.valid">Cotizar</button>
+          </div>
           </form>
 
 
@@ -90,11 +95,13 @@
 
 
           <form [formGroup]="formulario" (ngSubmit)="guardar()">
+            <span style="color:red;" *ngIf="formulario.controls['cuentas'].hasError('max')">La Cantidad de cuentas debe ser menor a 500</span>
           <ion-list>
             <ion-item>
               <ion-icon name="ios-mail-outline" item-start></ion-icon>
-              <ion-label stacked>Cuentas:</ion-label>
+              <ion-label stacked>Cuentas:  </ion-label>
               <ion-input formControlName="cuentas" type="number" placeholder="Cuentas" [(ngModel)]="cuentas" (ngModelChange)="onChangeInput($event)"></ion-input>
+
             </ion-item>
             <ion-item>
               <ion-icon name="calendar" item-start></ion-icon>
@@ -109,6 +116,10 @@
               <ion-input formControlName="total" type="text" value="{{total | currency}}" disabled="true"></ion-input>
             </ion-item>
           </ion-list>
+
+          <div padding>
+            <button ion-button round type="submit" full [disabled]="!formulario.valid">Cotizar</button>
+          </div>
           </form>
 
           <ion-fab right >
@@ -132,6 +143,7 @@
 
 
           <form [formGroup]="formulario" (ngSubmit)="guardar()">
+            <span style="color:red;" *ngIf="formulario.controls['cuentas'].hasError('max')">La Cantidad de cuentas debe ser menor a 500</span>
           <ion-list>
             <ion-item>
               <ion-icon name="ios-mail-outline" item-start></ion-icon>
@@ -151,6 +163,11 @@
               <ion-input formControlName="total" type="text" value="{{total | currency}}" disabled="true"></ion-input>
             </ion-item>
           </ion-list>
+
+          <div padding>
+            <button ion-button round full type="submit" [disabled]="!formulario.valid" >Cotizar</button>
+          </div>
+
           </form>
 
 
