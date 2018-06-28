@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, Nav, ModalController } from 'ionic-angular';
-import { FormBuilder, FormGroup, Validators, FormControl, NgForm, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
 
 /**
  * Generated class for the CorreoPage page.

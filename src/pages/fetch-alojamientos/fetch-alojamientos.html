@@ -15,7 +15,7 @@
 
   <ion-content >
     <ion-fab top right edge>
-      <button ion-fab mini color="s-dark" (click)="Inicio()" ><ion-icon name="ios-home-outline"></ion-icon></button>
+      <button ion-fab mini color="s-complementary" (click)="Inicio()" ><ion-icon name="home"></ion-icon></button>
     </ion-fab>
     <div class="content" style="background:#14cba8;">
       <ion-card color="detalle1">
@@ -42,15 +42,21 @@
     </div>
 
     <div *ngFor="let servicio of basedatos">
-      <ion-card>
-        <ion-card-header>
-          <ion-item>
+      <ion-card color="p-analogous-1">
+        <!-- <ion-fab right >
+          <button ion-fab mini color="p-complementary" (click)="Caracteristicas(servicio)"><ion-icon name="ios-alert-outline"></ion-icon></button>
+        </ion-fab> -->
+        <ion-card-header color="p-analogous-1">
+          <img src="{{servicio.imagen}}">
+          <ion-item color="p-analogous-1">
             <h2 ion-header text-wrap>{{servicio.nombreproducto}}</h2>
             <p>{{servicio.subtiposervicio}}</p>
           </ion-item>
         </ion-card-header>
-        <ion-card-content>
-          {{servicio.descripcion}}
+        <ion-card-content style="background-color: #28a688;">
+          <ion-item style="background-color: #28a688;">
+            <p ion-header text-wrap style="color:white;">{{servicio.descripcion}}</p>
+          </ion-item>
           <button ion-button block (click)="clickOpenCard(servicio)" color="primary">Ver precios</button>
         </ion-card-content>
       </ion-card>

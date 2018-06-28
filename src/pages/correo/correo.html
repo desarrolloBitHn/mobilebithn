@@ -10,7 +10,7 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>correo</ion-title>
+
   </ion-navbar>
 
 </ion-header>
@@ -18,19 +18,20 @@
 
 <ion-content padding>
   <ion-fab top right edge>
-    <button ion-fab mini color="s-dark" (click)="Inicio()"><ion-icon name="home" ></ion-icon></button>
+    <button ion-fab mini color="s-complementary" (click)="Inicio()"><ion-icon name="home" ></ion-icon></button>
   </ion-fab>
-      <ion-segment [(ngModel)]="tipoCorreo" color="p-dark" (ionChange)="onSegmentChange($event._value)">
-        <ion-segment-button value="1" >
-          G Suite
-        </ion-segment-button>
-        <ion-segment-button value="2">
-          Negocios
-        </ion-segment-button>
-        <ion-segment-button value="3">
-          Empresarial
-        </ion-segment-button>
-      </ion-segment>
+
+  <ion-segment [(ngModel)]="tipoCorreo" color="p-dark" (ionChange)="onSegmentChange($event._value)">
+    <ion-segment-button value="1" >
+      G Suite
+    </ion-segment-button>
+    <ion-segment-button value="2">
+      Negocios
+    </ion-segment-button>
+    <ion-segment-button value="3">
+      Empresarial
+    </ion-segment-button>
+  </ion-segment>
 
 
       <div [ngSwitch]="tipoCorreo">
@@ -169,8 +170,6 @@
           </div>
 
           </form>
-
-
 
           <ion-fab right >
             <button ion-fab mini color="s-dark"><ion-icon name="arrow-up"></ion-icon></button>

@@ -6,9 +6,7 @@
 -->
 <ion-header>
 
-  <ion-navbar>
-     <button start ion-button outline color="p-light" (click)="cerrar()">Cerrar</button>
-     <!-- <ion-icon start class="back-button-icon" (click)="cerrar()"></ion-icon> -->
+  <ion-navbar color="primary">
     <ion-title></ion-title>
   </ion-navbar>
 
@@ -16,7 +14,13 @@
 
 
 <ion-content padding>
-<h3>Preguntas Frecuentes</h3>
+  <ion-fab top left edge>
+    <button ion-fab mini color="p-complementary" (click)="cerrar()"><ion-icon name="ios-close" ></ion-icon></button>
+  </ion-fab>
+  <ion-item>
+    <h1>Preguntas Frecuentes</h1>
+  </ion-item>
+
 
  <ion-list no-lines *ngFor="let pregunta of item.preguntas">
   <ion-item text-wrap>

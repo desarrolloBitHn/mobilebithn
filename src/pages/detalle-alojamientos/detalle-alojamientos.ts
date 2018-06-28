@@ -19,6 +19,11 @@ item;
     this.item = navParams.get('item');
   }
 
+  Caracteristicas(servicio){
+    const modal = this.modalCtrl.create('ModalInfoDetallePage', { item: servicio });
+    modal.present();
+  }
+
   preguntas(_item){
     const modal = this.modalCtrl.create('ModalPreguntasPage', { item: _item });
     modal.present();
