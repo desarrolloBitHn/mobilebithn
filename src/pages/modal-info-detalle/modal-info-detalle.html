@@ -19,10 +19,10 @@
   </ion-fab>
 
   <ion-segment [(ngModel)]="tipoInfo" color="p-dark" (ionChange)="onSegmentChange($event._value)">
-    <ion-segment-button value="1" >
+    <ion-segment-button value="1" *ngIf="item.caracteristicas.length != 0">
       Características
     </ion-segment-button>
-    <ion-segment-button value="2">
+    <ion-segment-button value="2" *ngIf="item.detalles.length != 0">
       Detalles
     </ion-segment-button>
   </ion-segment>
@@ -42,7 +42,18 @@
     </div>
 
     <div *ngSwitchCase="2">
-      
+      <ion-item>
+        <h1>Programación Interna</h1>
+      </ion-item>
+       <ion-list no-lines *ngFor="let detallee of item.detalles">
+        <ion-item text-wrap>
+          <h2>{{detallee.detalle}}</h2>
+          <div *ngFor="let propiedadd of detallee.propiedades">
+            <p>&#8226; {{propiedadd.propiedad}}</p>
+          </div>
+
+        </ion-item>
+      </ion-list>
     </div>
 
   </div>

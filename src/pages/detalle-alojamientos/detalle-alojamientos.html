@@ -18,7 +18,7 @@
     <ion-fab-list>
    <button ion-fab (click)="Inicio()"><ion-icon name="ios-home-outline" ></ion-icon></button>
    <button ion-fab *ngIf="item.preguntas.length != 0"><ion-icon name="ios-help" (click)="preguntas(item)"></ion-icon></button>
-   <button ion-fab *ngIf="item.caracteristicas.length != 0" (click)="Caracteristicas(item)"><ion-icon name="ios-alert-outline"></ion-icon></button>
+   <button ion-fab *ngIf="item.caracteristicas.length != 0 || item.detalles.length != 0" (click)="Caracteristicas(item)"><ion-icon name="ios-alert-outline"></ion-icon></button>
   </ion-fab-list>
   </ion-fab>
 
@@ -57,7 +57,7 @@
                      </p>
                    </div>
                  </div>
-                 <button ion-button block color="light">Contizar ahora</button>
+                 <button ion-button block color="primary">Contizar ahora</button>
             </ion-card-content>
           </ion-card>
         </ion-col>

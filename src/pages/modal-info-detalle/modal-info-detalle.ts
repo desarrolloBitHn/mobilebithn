@@ -15,7 +15,7 @@ import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angul
 })
 export class ModalInfoDetallePage {
 item;
-tipoInfo = 1;
+tipoInfo;
   constructor(public viewCtrl: ViewController, public navCtrl: NavController, public navParams: NavParams) {
     this.item = navParams.get('item');
   }

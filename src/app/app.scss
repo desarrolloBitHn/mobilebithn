@@ -69,4 +69,19 @@ ion-icon {
     &[class*="appbithn-shopping-cart"] {
         mask-image: url(../assets/imgs/shopping-cart.svg);
     }
+    &[class*="appbithn-film-roll"] {
+        mask-image: url(../assets/imgs/film-roll.svg);
+    }
+    &[class*="appbithn-picture"] {
+        mask-image: url(../assets/imgs/picture.svg);
+    }
+    &[class*="appbithn-placeholder"] {
+        mask-image: url(../assets/imgs/placeholder.svg);
+    }
+    &[class*="appbithn-wifi"] {
+        mask-image: url(../assets/imgs/wifi.svg);
+    }
+    &[class*="appbithn-youtube"] {
+        mask-image: url(../assets/imgs/youtube.svg);
+    }
 }
