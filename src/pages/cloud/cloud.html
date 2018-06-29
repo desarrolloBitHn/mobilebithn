@@ -25,9 +25,11 @@
   </ion-fab>
   <div class="content" style="background:#14cba8;">
     <ion-card color="detalle1">
-      <h1 style="text-align:center;">
-        Alojamiento en la nube
-      </h1>
+      <ion-item  color="detalle1">
+        <h1 text-wrap style="text-align:center;">
+          Alojamiento en la nube
+        </h1>
+      </ion-item>
     </ion-card>
   </div>
   <ion-card><img src="./assets/imgs/cloud1.png" style="width:80%;height:80%;"></ion-card>
@@ -56,6 +58,12 @@
               <h1 text-center style="color:#FFFFFF;">{{plan.tipoplan}}</h1>
             </ion-card-header>
             <ion-card-content style="background-color: #000000;">
+              <ion-fab left style="left:1px; top:50px;" > <!-- -->
+                <button ion-fab mini color="p-complementary" (click)="detalleAbajo(plan.id)"><ion-icon name="md-arrow-round-down"></ion-icon></button>
+              </ion-fab>
+              <ion-item id="{{plan.id}}" style="background-color:#181818;" class="esconde">
+                <p *ngFor="let descript of plan.descripcion" style="color:white;">&#8226; {{descript.descripcion }}</p>
+             </ion-item>
               <p style="font-size:50px; color:#64FFDA;" text-center> {{plan.valor | currency}} </p>
                       <div class="item item-body">
                    <div class="show-list-numbers-and-dots">

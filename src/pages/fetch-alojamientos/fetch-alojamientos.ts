@@ -26,8 +26,10 @@ export class FetchAlojamientosPage {
           "imagen": "./assets/imgs/alojamientolinux2.png",
           "planes": [
                       {
+                        "id": 1,
                         "tipoplan": "Plan Básico",
                         "valor": 3.84,
+                        "unidad":"mes",
                         "descripcion": [
                                         {
                                           "detalle": "Dominio individual"
@@ -44,9 +46,10 @@ export class FetchAlojamientosPage {
                                       ]
                       },
                       {
+                        "id": 2,
                         "tipoplan": "Plan Micro",
                         "valor": 9.59,
-                        "dominio": 1,
+                        "unidad":"mes",
                         "descripcion": [
                                         {
                                           "detalle": "Dominio individual"
@@ -63,8 +66,10 @@ export class FetchAlojamientosPage {
                                       ]
                       },
                       {
+                        "id": 3,
                         "tipoplan": "Plan Profesional",
                         "valor": 17.16,
+                        "unidad":"mes",
                         "descripcion": [
                                         {
                                           "detalle": "Dominio individual"
@@ -81,8 +86,10 @@ export class FetchAlojamientosPage {
                                       ]
                       },
                       {
+                        "id": 4,
                         "tipoplan": "Business",
                         "valor": 20.12,
+                        "unidad":"mes",
                         "descripcion": [
                                         {
                                           "detalle": "3 dominios"
@@ -263,8 +270,10 @@ export class FetchAlojamientosPage {
           "imagen": "./assets/imgs/alojamientowindows3.png",
           "planes": [
                       {
+                        "id": 1,
                         "tipoplan": "Plan Básico",
                         "valor": 3.84,
+                        "unidad": "mes",
                         "descripcion": [
                           {
                             "1": "Dominio individual"
@@ -281,8 +290,10 @@ export class FetchAlojamientosPage {
                         ]
                       },
                       {
+                        "id": 2,
                         "tipoplan": "Plan Profesional",
                         "valor": 17.16,
+                        "unidad": "mes",
                         "descripcion": [
                           {
                             "detalle": "Dominio individual"
@@ -299,8 +310,10 @@ export class FetchAlojamientosPage {
                         ]
                       },
                       {
+                        "id": 3,
                         "tipoplan": "Plan Micro profesional",
                         "valor": 9.59,
+                        "unidad": "mes",
                         "descripcion": [
                           {
                             "detalle": "Dominio individual"
@@ -317,8 +330,10 @@ export class FetchAlojamientosPage {
                         ]
                       },
                       {
+                        "id": 4,
                         "tipoplan": "Business",
                         "valor": 20.12,
+                        "unidad": "mes",
                         "descripcion": [
                           {
                             "detalle": "5 dominios"
@@ -499,8 +514,10 @@ export class FetchAlojamientosPage {
           "imagen": "./assets/imgs/alojamientowordpress1.png",
           "planes": [
             {
+              "id": 1,
               "tipoplan": "Standar Lite",
               "valor": 8.4,
+              "unidad": "mes",
               "descripcion": [
                 {
                   "detalle": "1 instalación Wordpress"
@@ -520,8 +537,10 @@ export class FetchAlojamientosPage {
               ]
             },
             {
+              "id": 2,
               "tipoplan": "Plan Profesional",
               "valor": 17.16,
+              "unidad": "mes",
               "descripcion": [
                 {
                   "detalle": "2 instalaciones Wordpress"
@@ -541,8 +560,10 @@ export class FetchAlojamientosPage {
               ]
             },
             {
+              "id": 3,
               "tipoplan": "Plan Micro profesional",
               "valor": 9.59,
+              "unidad": "mes",
               "descripcion": [
                 {
                   "detalle": "3 instalaciones Wordpress"
@@ -562,8 +583,10 @@ export class FetchAlojamientosPage {
               ]
             },
             {
+              "id": 4,
               "tipoplan": "Business",
               "valor": 20.12,
+              "unidad": "mes",
               "descripcion": [
                 {
                   "detalle": "5 instalaciones Wordpress"
@@ -678,8 +701,10 @@ export class FetchAlojamientosPage {
           "imagen": "./assets/imgs/kvmlinuxvps.png",
           "planes": [
                       {
+                        "id": 1,
                         "tipoplan": "Standar",
                         "valor": 52.77,
+                        "unidad": "mes",
                         "descripcion": [
                                         {
                                           "detalle": "2 Cores"
@@ -699,8 +724,10 @@ export class FetchAlojamientosPage {
                                       ]
                       },
                       {
+                        "id": 2,
                         "tipoplan": "Enhanced",
                         "valor": 86.4,
+                        "unidad": "mes",
                         "descripcion": [
                                         {
                                           "detalle": "2 Cores"
@@ -720,8 +747,10 @@ export class FetchAlojamientosPage {
                                       ]
                       },
                       {
+                        "id": 3,
                         "tipoplan": "Premium",
                         "valor": 142.8,
+                        "unidad": "mes",
                         "descripcion": [
                                         {
                                           "detalle": "3 Cores"
@@ -741,8 +770,10 @@ export class FetchAlojamientosPage {
                                       ]
                       },
                       {
+                        "id": 4,
                         "tipoplan": "Elite",
                         "valor": 173.4,
+                        "unidad": "mes",
                         "descripcion": [
                                         {
                                           "detalle": "4 Cores"
@@ -883,6 +914,7 @@ export class FetchAlojamientosPage {
           "imagen": "./assets/imgs/servidoresdedicados.jpg",
           "planes": [
                       {
+                        "id": 1,
                         "tipoplan": "DS1",
                         "valor": 174,
                         "unidad": "mes",
@@ -908,6 +940,7 @@ export class FetchAlojamientosPage {
                                       ]
                       },
                       {
+                        "id": 2,
                         "tipoplan": "DS2",
                         "valor": 219,
                         "unidad": "mes",
@@ -933,6 +966,7 @@ export class FetchAlojamientosPage {
                                       ]
                       },
                       {
+                        "id": 3,
                         "tipoplan": "DS3",
                         "valor": 273,
                         "unidad": "mes",
@@ -958,6 +992,7 @@ export class FetchAlojamientosPage {
                                       ]
                       },
                       {
+                        "id": 4,
                         "tipoplan": "DS4",
                         "valor": 374,
                         "unidad": "mes",
@@ -1073,6 +1108,7 @@ export class FetchAlojamientosPage {
           "imagen": "./assets/imgs/servidoresdedicados.jpg",
           "planes": [
                       {
+                        "id": 1,
                         "tipoplan": "Standard",
                         "valor": 252,
                         "unidad": "mes",
@@ -1098,6 +1134,7 @@ export class FetchAlojamientosPage {
                                       ]
                       },
                       {
+                        "id": 2,
                         "tipoplan": "Business",
                         "valor": 396,
                         "unidad": "mes",
@@ -1123,6 +1160,7 @@ export class FetchAlojamientosPage {
                                       ]
                       },
                       {
+                        "id": 3,
                         "tipoplan": "Pro",
                         "valor": 396,
                         "unidad": "mes",
@@ -1148,6 +1186,7 @@ export class FetchAlojamientosPage {
                                       ]
                       },
                       {
+                        "id": 5,
                         "tipoplan": "Elite",
                         "valor": 441,
                         "unidad": "mes",
@@ -1186,6 +1225,7 @@ export class FetchAlojamientosPage {
           "imagen": "./assets/imgs/servidoresadministrados2.jpg",
           "planes": [
                       {
+                        "id": 1,
                         "tipoplan": "MS1",
                         "valor": 367.2,
                         "unidad": "mes",
@@ -1211,6 +1251,7 @@ export class FetchAlojamientosPage {
                                       ]
                       },
                       {
+                        "id": 2,
                         "tipoplan": "MS2",
                         "valor": 432,
                         "unidad": "mes",
@@ -1236,6 +1277,7 @@ export class FetchAlojamientosPage {
                                       ]
                       },
                       {
+                        "id": 3,
                         "tipoplan": "MS3",
                         "valor": 475.2,
                         "unidad": "mes",
@@ -1261,6 +1303,7 @@ export class FetchAlojamientosPage {
                                       ]
                       },
                       {
+                        "id": 4,
                         "tipoplan": "MS4",
                         "valor": 544.32,
                         "unidad": "mes",
@@ -1448,6 +1491,7 @@ export class FetchAlojamientosPage {
           "imagen": "./assets/imgs/alojamientoderevendedorlinux1.jpg",
           "planes": [
                       {
+                        "id": 1,
                         "tipoplan": "R0",
                         "valor": 14.4,
                         "unidad": "mes",
@@ -1467,6 +1511,7 @@ export class FetchAlojamientosPage {
                                       ]
                       },
                       {
+                        "id": 2,
                         "tipoplan": "R1",
                         "valor": 34.2,
                         "unidad": "mes",
@@ -1483,6 +1528,7 @@ export class FetchAlojamientosPage {
                                       ]
                       },
                       {
+                        "id": 3,
                         "tipoplan": "R2",
                         "valor": 37.8,
                         "unidad": "mes",
@@ -1502,6 +1548,7 @@ export class FetchAlojamientosPage {
                                       ]
                       },
                       {
+                        "id": 4,
                         "tipoplan": "R3",
                         "valor": 50.4,
                         "unidad": "mes",
@@ -1521,6 +1568,7 @@ export class FetchAlojamientosPage {
                                       ]
                       },
                       {
+                        "id": 5,
                         "tipoplan": "R4",
                         "valor": 76.5,
                         "unidad": "mes",
@@ -1640,6 +1688,7 @@ export class FetchAlojamientosPage {
           "imagen": "./assets/imgs/resellerwindows1.png",
           "planes": [
                       {
+                        "id": 1,
                         "tipoplan": "R1",
                         "valor": 32.4,
                         "unidad": "mes",
@@ -1653,6 +1702,7 @@ export class FetchAlojamientosPage {
                                       ]
                       },
                       {
+                        "id": 2,
                         "tipoplan": "R2",
                         "valor": 39.6,
                         "unidad": "mes",
@@ -1669,6 +1719,7 @@ export class FetchAlojamientosPage {
                                       ]
                       },
                       {
+                        "id": 3,
                         "tipoplan": "R3",
                         "valor": 50.4,
                         "unidad": "mes",
@@ -1685,6 +1736,7 @@ export class FetchAlojamientosPage {
                                       ]
                       },
                       {
+                        "id": 4,
                         "tipoplan": "R4",
                         "valor": 81,
                         "unidad": "mes",
@@ -1796,6 +1848,7 @@ export class FetchAlojamientosPage {
           "imagen": "./assets/imgs/codeguard.jpg",
           "planes": [
                       {
+                        "id": 1,
                         "tipoplan": "Basic",
                         "valor": 1.6,
                         "unidad": "mes",
@@ -1815,6 +1868,7 @@ export class FetchAlojamientosPage {
                                       ]
                       },
                       {
+                        "id": 2,
                         "tipoplan": "Professional",
                         "valor": 4.48,
                         "unidad": "mes",
@@ -1834,6 +1888,7 @@ export class FetchAlojamientosPage {
                                       ]
                       },
                       {
+                        "id": 3,
                         "tipoplan": "Premium",
                         "valor": 8.35,
                         "unidad": "mes",
@@ -1853,6 +1908,7 @@ export class FetchAlojamientosPage {
                                       ]
                       },
                       {
+                        "id": 4,
                         "tipoplan": "Enterprise",
                         "valor": 15.28,
                         "unidad": "mes",
@@ -1901,6 +1957,7 @@ export class FetchAlojamientosPage {
           "imagen": "./assets/imgs/sitelock3.png",
           "planes": [
                       {
+                        "id": 1,
                         "tipoplan": "Basic",
                         "valor": 21.6,
                         "unidad": "año",
@@ -1938,6 +1995,7 @@ export class FetchAlojamientosPage {
                                         ]
                       },
                       {
+                        "id": 2,
                         "tipoplan": "Professional",
                         "valor": 61.32,
                         "unidad": "año",
@@ -1987,6 +2045,7 @@ export class FetchAlojamientosPage {
                                         ]
                       },
                       {
+                        "id": 3,
                         "tipoplan": "Premium",
                         "valor": 81.84,
                         "unidad": "año",
@@ -2036,6 +2095,7 @@ export class FetchAlojamientosPage {
                                       ]
                       },
                       {
+                        "id": 4,
                         "tipoplan": "Enterprise",
                         "valor": 252,
                         "unidad": "año",
@@ -2111,9 +2171,10 @@ export class FetchAlojamientosPage {
           "descripcion": "Cifrado potente para su información.",
           "tiposervicio": "Alojamiento",
           "subtiposervicio": "Herramienta",
-          "imagen": "./assets/imgs/sitelock3.png",
+          "imagen": "./assets/imgs/certificado-ssl.png",
           "planes": [
                       {
+                        "id": 1,
                         "tipoplan": "Positive SSL",
                         "valor": 47.76,
                         "unidad": "año",
@@ -2136,6 +2197,7 @@ export class FetchAlojamientosPage {
                                         ]
                       },
                       {
+                        "id": 2,
                         "tipoplan": "Comodo SSL",
                         "valor": 95.88,
                         "unidad": "año",
@@ -2158,6 +2220,7 @@ export class FetchAlojamientosPage {
                                         ]
                       },
                       {
+                        "id": 3,
                         "tipoplan": "Positive SSL Wildcard",
                         "valor": 395.16,
                         "unidad": "año",
@@ -2180,6 +2243,7 @@ export class FetchAlojamientosPage {
                                       ]
                       },
                       {
+                        "id": 4,
                         "tipoplan": "EV SSL",
                         "valor": 407.76,
                         "unidad": "año",
@@ -2231,7 +2295,9 @@ export class FetchAlojamientosPage {
     this.nav.setRoot('InicioPage');
   }
 
+preguntas(parametro){
 
+}
 
   clickOpenCard(parametro){
     if (!parametro) parametro = {};

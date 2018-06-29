@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, Nav, ModalController} from 'ionic-angular';
-
+declare var jquery: any;
+declare var $: any;
 /**
  * Generated class for the CloudPage page.
  *
@@ -184,6 +185,9 @@ database =
   constructor(public modalCtrl: ModalController, public nav: Nav, public navCtrl: NavController, public navParams: NavParams) {
   }
 
+  detalleAbajo(id){
+    $('#' + id).slideToggle();
+  }
 
 
   Inicio(){
@@ -198,7 +202,7 @@ database =
   }
 
   ionViewDidLoad() {
-
+    $('.esconde').slideToggle();
     console.log(this.database.planes);
     console.log('ionViewDidLoad CloudPage');
   }

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ModalController, Nav } from 'ionic-angular';
-
+declare var jquery: any;
+declare var $: any;
 /**
  * Generated class for the DetalleAlojamientosPage page.
  *
@@ -24,6 +25,10 @@ item;
     modal.present();
   }
 
+  detalleAbajo(id){
+    $('#' + id).slideToggle();
+  }
+
   preguntas(_item){
     const modal = this.modalCtrl.create('ModalPreguntasPage', { item: _item });
     modal.present();
@@ -34,7 +39,7 @@ item;
   }
 
   ionViewDidLoad() {
-
+    $('.esconde').slideToggle();
     console.log(this.item);
 
 

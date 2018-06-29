@@ -26,12 +26,14 @@
     <ion-card color="detalle1">
 
       <ion-card-header>
-        <h1 style="text-align:center;">
-          {{item.nombreproducto}}
-        </h1>
+        <ion-item color="detalle1">
+          <h1 text-wrap style="text-align:center;">
+            {{item.nombreproducto}}
+          </h1>
+        </ion-item>
       </ion-card-header>
       <ion-card-content>
-        <p>{{item.descripcion}}</p>
+        <p text-wrap>{{item.descripcion}}</p>
       </ion-card-content>
     </ion-card>
   </div>
@@ -45,19 +47,26 @@
               <h1 text-center style="color:#FFFFFF;"> {{plan.tipoplan}}</h1>
             </ion-card-header>
             <ion-card-content style="background-color: #000000;">
+
+              <ion-fab left style="left:1px; top:50px;" > <!-- -->
+                <button ion-fab mini color="p-complementary" (click)="detalleAbajo(plan.id)"><ion-icon name="md-arrow-round-down"></ion-icon></button>
+              </ion-fab>
               <!-- <ion-fab  edge>
                 <button ion-fab>
                   <ion-icon name="pin"></ion-icon>
                 </button>
               </ion-fab> -->
-              <p style="font-size:50px; color:#64FFDA;" text-center> {{plan.valor | currency}} </p>
+              <ion-item id="{{plan.id}}" style="background-color:#181818;" class="esconde">
+                <p *ngFor="let descript of plan.descripcion" style="color:white;">&#8226; {{descript.detalle }}</p>
+             </ion-item>
+              <p style="font-size:50px; color:#64FFDA;" text-center> {{plan.valor | currency}} <label style="font-size:15px;"> / {{plan.unidad}}</label> </p>
                       <div class="item item-body">
-                   <div class="show-list-numbers-and-dots">
-                     <p style="margin-top:0px;color:#000000;">
-                     </p>
-                   </div>
-                 </div>
-                 <button ion-button block color="primary">Contizar ahora</button>
+                       <div class="show-list-numbers-and-dots">
+                         <p style="margin-top:0px;color:#000000;">
+                         </p>
+                       </div>
+                     </div>
+                 <button ion-button block color="primary">Cotizar ahora</button>
             </ion-card-content>
           </ion-card>
         </ion-col>
