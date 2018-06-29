@@ -23,6 +23,7 @@ database =
         "id": 1,
         "tipoplan": "Personal Cloud",
         "valor": "14.5",
+        "unidad":"mes",
         "descripcion": [
           {
             "id": 1,
@@ -54,6 +55,7 @@ database =
         "id": 2,
         "tipoplan": "Business Cloud",
         "valor": "18",
+        "unidad":"mes",
         "descripcion": [
           {
             "id": 1,
@@ -85,6 +87,7 @@ database =
         "id": 3,
         "tipoplan": "Pro Cloud",
         "valor": "27",
+        "unidad":"mes",
         "descripcion": [
           {
             "id": 1,

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, Nav } from 'ionic-angular';
-
+declare var jquery: any;
+declare var $: any;
 /**
  * Generated class for the SitioWebPage page.
  *
@@ -633,11 +634,16 @@ export class SitioWebPage {
   constructor(public nav: Nav, public navCtrl: NavController, public navParams: NavParams) {
   }
 
+  detalleAbajo(id){
+    $('#' + id).slideToggle();
+  }
+
   Inicio(){
     this.nav.setRoot('InicioPage');
   }
 
   ionViewDidLoad() {
+    $('.esconde').slideToggle();
     console.log('ionViewDidLoad SitioWebPage');
   }
 
