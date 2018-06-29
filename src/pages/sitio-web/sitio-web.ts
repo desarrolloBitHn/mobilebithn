@@ -630,7 +630,7 @@ export class SitioWebPage {
       ],
       "linkprueba": ""
     }
-  ]
+  ];
   constructor(public nav: Nav, public navCtrl: NavController, public navParams: NavParams) {
   }
 
@@ -643,6 +643,7 @@ export class SitioWebPage {
   }
 
   ionViewDidLoad() {
+    console.log(this.basedatos.planes[]);
     $('.esconde').slideToggle();
     console.log('ionViewDidLoad SitioWebPage');
   }
