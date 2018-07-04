@@ -16,19 +16,26 @@ import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms'
 })
 export class ModalCotizarPage {
   emailPattern = "^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$";
-  mobnumPattern = "^\+[0-9]+(\s|\S)+[0-9]{2,14}$";
+  mobnumPattern = "^\\+[0-9]+(\s|\S)+[0-9]{2,14}$";
   formulario: FormGroup;
   item;
+  total = 0;
   constructor(public navCtrl: NavController, public navParams: NavParams, public viewCtrl: ViewController, public formBuilder: FormBuilder) {
+    this.formulario = this.crearMiForm();
     this.item = navParams.get('item');
   }
 
   ionViewDidLoad() {
+    console.log(this.item.valor);
     console.log('ionViewDidLoad ModalCotizarPage');
   }
 
   cerrar() {
    this.viewCtrl.dismiss();
+ }
+
+ guardar(){
+   console.log(this.formulario);
  }
 
  private crearMiForm(){
@@ -40,7 +47,7 @@ export class ModalCotizarPage {
      celular: new FormControl('', [Validators.required, Validators.pattern(this.mobnumPattern)]),
      comentario: new FormControl(),
      valor: new FormControl(),
-     unidades: new FormControl('', Validators.required),
+     unidades: new FormControl(0, Validators.required),
      total: new FormControl()
    });
  }

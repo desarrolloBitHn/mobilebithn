@@ -106,4 +106,13 @@ ion-icon {
     &[class*="appbithn-smartphone"] {
         mask-image: url(../assets/imgs/smartphone.svg);
     }
+    &[class*="appbithn-barcode"] {
+        mask-image: url(../assets/imgs/barcode.svg);
+    }
+    &[class*="appbithn-bill"] {
+        mask-image: url(../assets/imgs/bill.svg);
+    }
+    &[class*="appbithn-money-paper-of-dollars"] {
+        mask-image: url(../assets/imgs/money-paper-of-dollars.svg);
+    }
 }
