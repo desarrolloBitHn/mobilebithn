@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, Nav } from 'ionic-angular';
+import { ModalController, IonicPage, NavController, NavParams, Nav } from 'ionic-angular';
 
 /**
  * Generated class for the DetailsRegistroDominioPage page.
@@ -15,13 +15,18 @@ import { IonicPage, NavController, NavParams, Nav } from 'ionic-angular';
 })
 export class DetailsRegistroDominioPage {
   item;
-  constructor(public nav: Nav, public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public modalCtrl: ModalController, public nav: Nav, public navCtrl: NavController, public navParams: NavParams) {
     this.item = navParams.get('item');
   }
 
 
   Inicio(){
     this.nav.setRoot('InicioPage');
+  }
+
+  cotizar(_item){
+    const modal = this.modalCtrl.create('ModalCotizarPage', { item: _item });
+    modal.present();
   }
 
   ionViewDidLoad() {

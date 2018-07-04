@@ -4,6 +4,7 @@
   See http://ionicframework.com/docs/components/#navigation for more info on
   Ionic pages and navigation.
 -->
+
 <ion-header>
 
   <ion-navbar color="s-light">
@@ -20,69 +21,255 @@
     <button ion-fab mini color="s-dark" (click)="Inicio()"><ion-icon name="home" ></ion-icon></button>
   </ion-fab>
 
-  <div class="content" style="background:#14cba8;">
-    <ion-card color="detalle1">
-      <ion-item color="detalle1">
-        <h1 text-wrap text-wrap style="text-align:center;">
-          Web Site
-        </h1>
-      </ion-item>
+  <ion-segment [(ngModel)]="herramientaWeb" color="p-dark" (ionChange)="onSegmentChange($event._value)" >
 
-    </ion-card>
-  </div>
+      <ion-segment-button text-wrap  value="1" >
+        Weebly
+      </ion-segment-button>
+      <ion-segment-button text-wrap  value="2" >
+        Constructor Web
+      </ion-segment-button>
+      <ion-segment-button text-wrap  value="3" >
+        Impress.Ly
+      </ion-segment-button>
 
-  <ion-card><img src="./assets/imgs/website1.png" style="width:80%;height:80%;"></ion-card>
-
-
-  <div class="content" style="background-color: #14cba8;">
-    <ion-card color="detalle1">
-      <ion-card-header>
-        <h1 style="text-align:center;">
-          <ion-icon name="appbithn-shopping-cart"></ion-icon>
-          <ion-icon name="appbithn-film-roll"></ion-icon>
-          <ion-icon name="appbithn-picture"></ion-icon>
-          <ion-icon name="appbithn-placeholder"></ion-icon>
-          <ion-icon name="appbithn-wifi"></ion-icon>
-          <ion-icon name="appbithn-youtube"></ion-icon>
-          <ion-icon name="appbithn-shopping-cart"></ion-icon>
-        </h1>
-      </ion-card-header>
-    </ion-card>
-  </div>
+  </ion-segment>
 
 
 
-  <div cards>
-    <div class="grid-full">
-      <ion-row >
-        <ion-col *ngFor="let producto of basedatos">
-          <ion-card >
-            <ion-card-header style="background-color: #212121;">
-              <h1 text-center style="color:#FFFFFF;">{{producto.nombreherramienta}}</h1>
-            </ion-card-header>
-            <ion-card-content style="background-color: #000000;">
-            <!--  <ion-fab left style="left:1px; top:50px;" >
-                <button ion-fab mini color="p-complementary" (click)="detalleAbajo(producto.id)"><ion-icon name="md-arrow-round-down"></ion-icon></button>
-              </ion-fab>
-              <ion-item id="{{producto.id}}" style="background-color:#181818;" class="esconde">
-                <p *ngFor="let descript of producto.descripcion" style="color:white;">&#8226; {{descript.descripcion }}</p>
-             </ion-item>
-              <p style="font-size:50px; color:#64FFDA;" text-center> {{plan.valor | currency}} <label style="font-size:15px;" *ngIf="plan.unidad != ''"> / {{plan.unidad}}</label></p>
-                    -->  <div class="item item-body">
-                   <div class="show-list-numbers-and-dots">
-                     <p style="margin-top:0px;color:#000000;">
-                     </p>
-                   </div>
-                 </div>
-                 <button ion-button block color="primary" (click)="cotizar()">
-                   <label style="font-color:white;">Cotizar</label>
-                 </button>
-            </ion-card-content>
+<div [ngSwitch]="herramientaWeb">
+
+
+
+      <div *ngSwitchCase="1">
+
+        <div class="content" style="background:#14cba8;">
+          <ion-card color="detalle1">
+            <ion-item color="detalle1">
+              <h1 text-wrap style="text-align:center;">
+                {{herramienta.nombreherramienta}}
+              </h1>
+            </ion-item>
           </ion-card>
-        </ion-col>
-      </ion-row>
-    </div>
-  </div>
+        </div>
+
+        <ion-card><img src="./assets/imgs/website1.png" style="width:80%;height:80%;"></ion-card>
+
+        <div class="content" style="background-color: #14cba8;">
+          <ion-card color="detalle1">
+            <ion-card-header>
+              <h1 style="text-align:center;">
+                <ion-icon name="appbithn-shopping-cart"></ion-icon>
+                <ion-icon name="appbithn-film-roll"></ion-icon>
+                <ion-icon name="appbithn-picture"></ion-icon>
+                <ion-icon name="appbithn-placeholder"></ion-icon>
+                <ion-icon name="appbithn-wifi"></ion-icon>
+                <ion-icon name="appbithn-youtube"></ion-icon>
+                <ion-icon name="appbithn-shopping-cart"></ion-icon>
+              </h1>
+            </ion-card-header>
+          </ion-card>
+        </div>
+
+
+
+        <div cards>
+          <div class="grid-full">
+            <ion-row>
+              <ion-col *ngFor="let plan of herramienta.planes">
+                <ion-card >
+                  <ion-card-header style="background-color: #212121;">
+                    <h1 text-center style="color:#FFFFFF;"> {{plan.nombre}}</h1>
+                  </ion-card-header>
+                  <ion-card-content style="background-color: #000000;">
+
+                    <ion-fab  left style="left:1px; top:50px;" >
+                      <button ion-fab mini color="p-complementary" (click)="detalleAbajo(plan.id)"><ion-icon id="icon_{{plan.id}}" name="md-arrow-round-down"></ion-icon></button>
+                    </ion-fab>
+                    <!-- <ion-fab  edge>
+                      <button ion-fab>
+                        <ion-icon name="pin"></ion-icon>
+                      </button>
+                    </ion-fab> -->
+                    <ion-item id="{{plan.id}}" style="background-color:#181818; display:none;">
+                      <p *ngFor="let descript of plan.descripcion" style="color:white;">&#8226; {{descript.descripcion }}</p>
+                   </ion-item>
+                    <p style="font-size:50px; color:#64FFDA;" text-center> {{plan.valor | currency}} <label style="font-size:15px;"> / {{plan.unidad}}</label> </p>
+                            <div class="item item-body">
+                             <div class="show-list-numbers-and-dots">
+                               <p style="margin-top:0px;color:#000000;">
+                               </p>
+                             </div>
+                           </div>
+                       <button ion-button block color="primary" (click)="cotizar(herramienta)">Cotizar ahora</button>
+                  </ion-card-content>
+                </ion-card>
+              </ion-col>
+            </ion-row>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div *ngSwitchCase="2">
+
+
+
+
+        <div class="content" style="background:#14cba8;">
+          <ion-card color="detalle1">
+            <ion-item color="detalle1">
+              <h1 text-wrap text-wrap style="text-align:center;">
+                {{herramienta.nombreherramienta}}
+              </h1>
+            </ion-item>
+          </ion-card>
+        </div>
+
+        <ion-card><img src="./assets/imgs/website1.png" style="width:80%;height:80%;"></ion-card>
+
+        <div class="content" style="background-color: #14cba8;">
+          <ion-card color="detalle1">
+            <ion-card-header>
+              <h1 style="text-align:center;">
+                <ion-icon name="appbithn-shopping-cart"></ion-icon>
+                <ion-icon name="appbithn-film-roll"></ion-icon>
+                <ion-icon name="appbithn-picture"></ion-icon>
+                <ion-icon name="appbithn-placeholder"></ion-icon>
+                <ion-icon name="appbithn-wifi"></ion-icon>
+                <ion-icon name="appbithn-youtube"></ion-icon>
+                <ion-icon name="appbithn-shopping-cart"></ion-icon>
+              </h1>
+            </ion-card-header>
+          </ion-card>
+        </div>
+
+
+        <div cards>
+          <div class="grid-full">
+            <ion-row>
+              <ion-col *ngFor="let plan of herramienta.planes">
+                <ion-card >
+                  <ion-card-header style="background-color: #212121;">
+                    <h1 text-center style="color:#FFFFFF;"> {{plan.nombre}}</h1>
+                  </ion-card-header>
+                  <ion-card-content style="background-color: #000000;">
+
+                    <ion-fab left style="left:1px; top:50px;" > <!-- -->
+                      <button ion-fab mini color="p-complementary" (click)="detalleAbajo(plan.id)"><ion-icon name="md-arrow-round-down"></ion-icon></button>
+                    </ion-fab>
+                    <!-- <ion-fab  edge>
+                      <button ion-fab>
+                        <ion-icon name="pin"></ion-icon>
+                      </button>
+                    </ion-fab> -->
+                    <ion-item id="{{plan.id}}" style="background-color:#181818; display:none;">
+                      <p *ngFor="let descript of plan.descripcion" style="color:white;">&#8226; {{descript.descripcion }}</p>
+                   </ion-item>
+                    <p style="font-size:50px; color:#64FFDA;" text-center> {{plan.valor | currency}} <label style="font-size:15px;"> / {{plan.unidad}}</label> </p>
+                            <div class="item item-body">
+                             <div class="show-list-numbers-and-dots">
+                               <p style="margin-top:0px;color:#000000;">
+                               </p>
+                             </div>
+                           </div>
+                       <button ion-button block color="primary" (click)="cotizar(herramienta)">Cotizar ahora</button>
+                  </ion-card-content>
+                </ion-card>
+              </ion-col>
+            </ion-row>
+          </div>
+        </div>
+
+
+
+
+      </div>
+
+      <div *ngSwitchCase="3">
+
+
+
+        <div class="content" style="background:#14cba8;">
+          <ion-card color="detalle1">
+            <ion-item color="detalle1">
+              <h1 text-wrap text-wrap style="text-align:center;">
+                {{herramienta.nombreherramienta}}
+              </h1>
+            </ion-item>
+          </ion-card>
+        </div>
+
+        <ion-card><img src="./assets/imgs/website1.png" style="width:80%;height:80%;"></ion-card>
+
+        <div class="content" style="background-color: #14cba8;">
+          <ion-card color="detalle1">
+            <ion-card-header>
+              <h1 style="text-align:center;">
+                <ion-icon name="appbithn-shopping-cart"></ion-icon>
+                <ion-icon name="appbithn-film-roll"></ion-icon>
+                <ion-icon name="appbithn-picture"></ion-icon>
+                <ion-icon name="appbithn-placeholder"></ion-icon>
+                <ion-icon name="appbithn-wifi"></ion-icon>
+                <ion-icon name="appbithn-youtube"></ion-icon>
+                <ion-icon name="appbithn-shopping-cart"></ion-icon>
+              </h1>
+            </ion-card-header>
+          </ion-card>
+        </div>
+
+
+        <div cards>
+          <div class="grid-full">
+            <ion-row>
+              <ion-col *ngFor="let plan of herramienta.planes">
+                <ion-card >
+                  <ion-card-header style="background-color: #212121;">
+                    <h1 text-center style="color:#FFFFFF;"> {{plan.nombre}}</h1>
+                  </ion-card-header>
+                  <ion-card-content style="background-color: #000000;">
+
+                    <ion-fab left style="left:1px; top:50px;" > <!-- -->
+                      <button ion-fab mini color="p-complementary" (click)="detalleAbajo(plan.id)"><ion-icon name="md-arrow-round-down"></ion-icon></button>
+                    </ion-fab>
+                    <!-- <ion-fab  edge>
+                      <button ion-fab>
+                        <ion-icon name="pin"></ion-icon>
+                      </button>
+                    </ion-fab> -->
+                    <ion-item id="{{plan.id}}" style="background-color:#181818; display:none;" >
+                      <p *ngFor="let descript of plan.descripcion" style="color:white;">&#8226; {{descript.descripcion }}</p>
+                   </ion-item>
+                    <p style="font-size:50px; color:#64FFDA;" text-center> {{plan.valor | currency}} <label style="font-size:15px;"> / {{plan.unidad}}</label> </p>
+                            <div class="item item-body">
+                             <div class="show-list-numbers-and-dots">
+                               <p style="margin-top:0px;color:#000000;">
+                               </p>
+                             </div>
+                           </div>
+                       <button ion-button block color="primary" (click)="cotizar(herramienta)">Cotizar ahora</button>
+                  </ion-card-content>
+                </ion-card>
+              </ion-col>
+            </ion-row>
+          </div>
+        </div>
+
+
+
+      </div>
+
+
+
+
+</div>
+
+
+
+
+
+
 
 
 

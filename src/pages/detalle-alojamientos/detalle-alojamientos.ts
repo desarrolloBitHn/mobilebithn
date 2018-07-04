@@ -27,6 +27,8 @@ item;
 
   detalleAbajo(id){
     $('#' + id).slideToggle();
+    $( "#icon_"+ id ).toggleClass("ion-md-arrow-round-down");
+    $( "#icon_"+ id ).toggleClass("ion-md-arrow-round-up");
   }
 
   preguntas(_item){
@@ -38,8 +40,12 @@ item;
     this.nav.setRoot('InicioPage');
   }
 
+  cotizar(_item){
+    const modal = this.modalCtrl.create('ModalCotizarPage', { item: _item });
+    modal.present();
+  }
+
   ionViewDidLoad() {
-    $('.esconde').slideToggle();
     console.log(this.item);
 
 

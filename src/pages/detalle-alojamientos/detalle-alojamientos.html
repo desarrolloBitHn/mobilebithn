@@ -49,14 +49,14 @@
             <ion-card-content style="background-color: #000000;">
 
               <ion-fab left style="left:1px; top:50px;" > <!-- -->
-                <button ion-fab mini color="p-complementary" (click)="detalleAbajo(plan.id)"><ion-icon name="md-arrow-round-down"></ion-icon></button>
+                <button ion-fab mini color="p-complementary" (click)="detalleAbajo(plan.id)"><ion-icon id="icon_{{plan.id}}" name="md-arrow-round-down"></ion-icon></button>
               </ion-fab>
               <!-- <ion-fab  edge>
                 <button ion-fab>
                   <ion-icon name="pin"></ion-icon>
                 </button>
               </ion-fab> -->
-              <ion-item id="{{plan.id}}" style="background-color:#181818;" class="esconde">
+              <ion-item id="{{plan.id}}" style="background-color:#181818; display:none;" >
                 <p *ngFor="let descript of plan.descripcion" style="color:white;">&#8226; {{descript.detalle }}</p>
              </ion-item>
               <p style="font-size:50px; color:#64FFDA;" text-center> {{plan.valor | currency}} <label style="font-size:15px;"> / {{plan.unidad}}</label> </p>
@@ -66,7 +66,7 @@
                          </p>
                        </div>
                      </div>
-                 <button ion-button block color="primary">Cotizar ahora</button>
+                 <button ion-button block color="primary" (click)="cotizar(item)">Cotizar ahora</button>
             </ion-card-content>
           </ion-card>
         </ion-col>

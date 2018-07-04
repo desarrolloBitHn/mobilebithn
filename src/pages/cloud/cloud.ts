@@ -190,6 +190,8 @@ database =
 
   detalleAbajo(id){
     $('#' + id).slideToggle();
+    $( "#icon_"+ id ).toggleClass("ion-md-arrow-round-down");
+    $( "#icon_"+ id ).toggleClass("ion-md-arrow-round-up");
   }
 
 
@@ -197,7 +199,10 @@ database =
     this.nav.setRoot('InicioPage');
   }
 
-  cotizar(){}
+  cotizar(_item){
+    const modal = this.modalCtrl.create('ModalCotizarPage', { item: _item });
+    modal.present();
+  }
 
   preguntas(_item){
     const modal = this.modalCtrl.create('ModalPreguntasPage', { item: _item });
@@ -205,7 +210,6 @@ database =
   }
 
   ionViewDidLoad() {
-    $('.esconde').slideToggle();
     console.log(this.database.planes);
     console.log('ionViewDidLoad CloudPage');
   }

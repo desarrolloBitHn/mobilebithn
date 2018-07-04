@@ -487,12 +487,17 @@ export class CorreoPage {
   }
 
   intMes(mes){
+
     for(var i = 0; i < this.meses.length; i++){
       if (this.meses[i].id == mes){
         return this.meses[i].mes;
-        break;
       }
     }
+  }
+
+  cotizar(_item){
+    const modal = this.modalCtrl.create('ModalCotizarPage', { item: _item });
+    modal.present();
   }
 
   private crearMiForm(){
