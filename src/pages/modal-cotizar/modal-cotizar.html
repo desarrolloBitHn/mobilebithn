@@ -41,12 +41,12 @@
           <ion-item>
               <ion-icon name="appbithn-phone-call" item-start></ion-icon>
               <ion-label stacked>Teléfono:</ion-label>
-              <ion-input formControlName="telefono" type="text" placeholder="+50422300000"></ion-input>
+              <ion-input formControlName="telefono" type="tel" placeholder="+50422300000"></ion-input>
           </ion-item>
           <ion-item>
               <ion-icon name="appbithn-smartphone" item-start></ion-icon>
               <ion-label stacked>Celular:</ion-label>
-              <ion-input formControlName="celular" type="text" placeholder="+50485656565"></ion-input>
+              <ion-input formControlName="celular" type="tel" placeholder="+50485656565"></ion-input>
           </ion-item>
           <ion-item>
               <ion-icon name="ios-chatbubbles-outline" item-start ></ion-icon>
@@ -56,7 +56,7 @@
           <ion-item>
               <ion-icon name="appbithn-money-paper-of-dollars" item-start></ion-icon>
               <ion-label stacked>Valor:</ion-label>
-              <ion-label stacked style="font-size:17px">{{item.valor}}</ion-label>
+              <ion-input formControlName="valor" type="number" [value]="item.valor"></ion-input>
           </ion-item>
 
           <ion-row>
@@ -76,12 +76,12 @@
           <ion-item>
               <ion-icon name="appbithn-bill" item-start></ion-icon>
               <ion-label stacked>Total:</ion-label>
-              <ion-input formControlName="total" type="text" ></ion-input>
+              <ion-input formControlName="total" type="number" ></ion-input>
           </ion-item>
       </ion-list>
 
       <div padding>
-        <button ion-button round full type="submit" [disabled]="!formulario.valid">Enviar</button>
+        <button ion-button round full type="submit" >Enviar</button>
       </div>
   </form>
 
