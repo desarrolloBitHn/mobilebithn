@@ -276,16 +276,16 @@ export class FetchAlojamientosPage {
                         "unidad": "mes",
                         "descripcion": [
                           {
-                            "1": "Dominio individual"
+                            "detalle": "Dominio individual"
                           },
                           {
-                            "2": "5 GB Espacio en Disco"
+                            "detalle": "5 GB Espacio en Disco"
                           },
                           {
-                            "3": "25 GB Transferencia de datos"
+                            "detalle": "25 GB Transferencia de datos"
                           },
                           {
-                            "4": "20 Cuentas de correo"
+                            "detalle": "20 Cuentas de correo"
                           }
                         ]
                       },
@@ -436,7 +436,7 @@ export class FetchAlojamientosPage {
                                         ]
                         },
                         {
-                          "id": 1,
+                          "id": 2,
                           "detalle": "Programe en cualquier lenguaje",
                           "propiedades": [
                                           {
@@ -462,7 +462,7 @@ export class FetchAlojamientosPage {
                                         ]
                         },
                         {
-                          "id": 1,
+                          "id": 3,
                           "detalle": "Top-Notch Security",
                           "propiedades": [
                                             {
@@ -513,98 +513,98 @@ export class FetchAlojamientosPage {
           "subtiposervicio": "Alojamiento compartido",
           "imagen": "./assets/imgs/alojamientowordpress1.png",
           "planes": [
-            {
-              "id": 1,
-              "tipoplan": "Standar Lite",
-              "valor": 8.4,
-              "unidad": "mes",
-              "descripcion": [
-                {
-                  "detalle": "1 instalación Wordpress"
-                },
-                {
-                  "detalle": "Dual Core CPU Core"
-                },
-                {
-                  "detalle": "2 GB RAM"
-                },
-                {
-                  "detalle": "5 GB Almacenamiento"
-                },
-                {
-                  "detalle": "Cuentas ilimitadas de correo electrónico"
-                }
-              ]
-            },
-            {
-              "id": 2,
-              "tipoplan": "Plan Profesional",
-              "valor": 17.16,
-              "unidad": "mes",
-              "descripcion": [
-                {
-                  "detalle": "2 instalaciones Wordpress"
-                },
-                {
-                  "detalle": "Quad Core CPU Core"
-                },
-                {
-                  "detalle": "4 GB RAM"
-                },
-                {
-                  "detalle": "20 GB Almacenamiento"
-                },
-                {
-                  "detalle": "Cuentas ilimitadas de correo electrónico"
-                }
-              ]
-            },
-            {
-              "id": 3,
-              "tipoplan": "Plan Micro profesional",
-              "valor": 9.59,
-              "unidad": "mes",
-              "descripcion": [
-                {
-                  "detalle": "3 instalaciones Wordpress"
-                },
-                {
-                  "detalle": "Hexa Core CPU Core"
-                },
-                {
-                  "detalle": "6 GB RAM"
-                },
-                {
-                  "detalle": "40 GB Almacenamiento"
-                },
-                {
-                  "detalle": "Cuentas ilimitadas de correo electrónico"
-                }
-              ]
-            },
-            {
-              "id": 4,
-              "tipoplan": "Business",
-              "valor": 20.12,
-              "unidad": "mes",
-              "descripcion": [
-                {
-                  "detalle": "5 instalaciones Wordpress"
-                },
-                {
-                  "detalle": "Hexa Core CPU Core"
-                },
-                {
-                  "detalle": "6 GB RAM"
-                },
-                {
-                  "detalle": "40 GB Almacenamiento"
-                },
-                {
-                  "detalle": "Cuentas ilimitadas de correo electrónico"
-                }
-              ]
-            }
+              {
+                "id": 1,
+                "tipoplan": "Standar Lite",
+                "valor": 8.4,
+                "unidad": "mes",
+                "descripcion": [
+                  {
+                    "detalle": "1 instalación Wordpress"
+                  },
+                  {
+                    "detalle": "Dual Core CPU Core"
+                  },
+                  {
+                    "detalle": "2 GB RAM"
+                  },
+                  {
+                    "detalle": "5 GB Almacenamiento"
+                  },
+                  {
+                    "detalle": "Cuentas ilimitadas de correo electrónico"
+                  }
+                ]
+              },
+              {
+                "id": 2,
+                "tipoplan": "Plan Profesional",
+                "valor": 17.16,
+                "unidad": "mes",
+                "descripcion": [
+                  {
+                    "detalle": "2 instalaciones Wordpress"
+                  },
+                  {
+                    "detalle": "Quad Core CPU Core"
+                  },
+                  {
+                    "detalle": "4 GB RAM"
+                  },
+                  {
+                    "detalle": "20 GB Almacenamiento"
+                  },
+                  {
+                    "detalle": "Cuentas ilimitadas de correo electrónico"
+                  }
+                ]
+              },
+              {
+                "id": 3,
+                "tipoplan": "Plan Micro profesional",
+                "valor": 9.59,
+                "unidad": "mes",
+                "descripcion": [
+                  {
+                    "detalle": "3 instalaciones Wordpress"
+                  },
+                  {
+                    "detalle": "Hexa Core CPU Core"
+                  },
+                  {
+                    "detalle": "6 GB RAM"
+                  },
+                  {
+                    "detalle": "40 GB Almacenamiento"
+                  },
+                  {
+                    "detalle": "Cuentas ilimitadas de correo electrónico"
+                  }
+                ]
+              },
+              {
+                "id": 4,
+                "tipoplan": "Business",
+                "valor": 20.12,
+                "unidad": "mes",
+                "descripcion": [
+                  {
+                    "detalle": "5 instalaciones Wordpress"
+                  },
+                  {
+                    "detalle": "Hexa Core CPU Core"
+                  },
+                  {
+                    "detalle": "6 GB RAM"
+                  },
+                  {
+                    "detalle": "40 GB Almacenamiento"
+                  },
+                  {
+                    "detalle": "Cuentas ilimitadas de correo electrónico"
+                  }
+                ]
+              }
           ],
           "preguntas": [
             {
