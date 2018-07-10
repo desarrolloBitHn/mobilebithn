@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, Nav, ModalController} from 'ionic-angular';
+import { Firebase } from '@ionic-native/firebase';
 declare var jquery: any;
 declare var $: any;
 /**
@@ -185,7 +186,10 @@ database =
                 ]
   };
 
-  constructor(public modalCtrl: ModalController, public nav: Nav, public navCtrl: NavController, public navParams: NavParams) {
+  constructor( private firebase: Firebase, public modalCtrl: ModalController, public nav: Nav, public navCtrl: NavController, public navParams: NavParams) {
+    this.firebase.getToken()
+      .then(token => console.log(`The token is ${token}`)) // save the token server-side and use it to push notifications to this device
+      .catch(error => console.error('Error getting token', error));
   }
 
   detalleAbajo(id){
