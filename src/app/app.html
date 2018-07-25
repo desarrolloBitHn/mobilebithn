@@ -1,4 +1,4 @@
-<ion-menu [content]="mainContent">
+<ion-menu id="leftMenu"  [content]="content" side="left" type="overlay">
   <ion-header>
     <ion-toolbar color="primary">
       <ion-title>
@@ -16,4 +16,31 @@
   </ion-content>
 </ion-menu>
 
-<ion-nav #mainContent [root]="rootPage"></ion-nav>
+<ion-menu id="rightMenu" [content]="content" side="right" type="reveal">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Carrito de Compras</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <ion-list>
+      <ion-item  class="item-icon-right" >
+        <ion-thumbnail item-start>
+          <img src="https://s3.amazonaws.com/ionic-io-static/aSBG0VfKShWqSv4HoqBh_hp14bs018la.jpg">
+        </ion-thumbnail>
+        <h2 class="item-text-wrap">Almacenamiento
+          <p class="item-text-wrap" style="white-space:normal;">Cloud Hosting • 1 año</p>
+          <button ion-button clear item-start>45.40 $</button>
+          <button color="danger" ion-button  item-end>Quitar</button>
+        </h2>
+      </ion-item>
+    </ion-list>
+    <ion-card>
+      <ion-card-content>
+        Tu has pulsado
+      </ion-card-content>
+    </ion-card>
+  </ion-content>
+</ion-menu>
+
+<ion-nav #content [root]="rootPage" swipeBackEnabled="false"></ion-nav>

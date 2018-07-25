@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ModalController, Nav } from 'ionic-angular';
-
+import { Toast } from '@ionic-native/toast';
+declare var jquery: any;
+declare var $: any;
 /**
  * Generated class for the FetchDominiosPage page.
  *
@@ -192,7 +194,7 @@ export class FetchDominiosPage {
 
 
 
-  constructor(public nav: Nav, public modalCrtl: ModalController, public navCtrl: NavController, public navParams: NavParams) {
+  constructor(private toast: Toast, public nav: Nav, public modalCrtl: ModalController, public navCtrl: NavController, public navParams: NavParams) {
   }
 
     Inicio(){

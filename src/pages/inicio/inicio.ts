@@ -27,6 +27,7 @@ export class InicioPage {
   ionViewDidLoad() {
     this.mensaje();
     console.log('ionViewDidLoad InicioPage');
+    console.log(this.rootPage);
   }
 
   paginacion(pagina){

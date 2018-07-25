@@ -29,6 +29,8 @@ export class DetailsRegistroDominioPage {
     modal.present();
   }
 
+
+
   ionViewDidLoad() {
     console.log('ionViewDidLoad DetailsRegistroDominioPage');
   }

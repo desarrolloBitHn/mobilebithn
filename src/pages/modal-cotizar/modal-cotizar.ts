@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams,  Nav, ModalController, ViewController } from 'ionic-angular';
+import { EmailComposer } from '@ionic-native/email-composer';
+import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angular';
 import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
+import { Http } from '@angular/http';
+import { Toast } from '@ionic-native/toast';
 
 /**
  * Generated class for the ModalCotizarPage page.
@@ -20,7 +23,7 @@ export class ModalCotizarPage {
   formulario: FormGroup;
   item;
   total = 0;
-  constructor(public navCtrl: NavController, public navParams: NavParams, public viewCtrl: ViewController, public formBuilder: FormBuilder) {
+  constructor(private toast: Toast, private http: Http, private emailComposer: EmailComposer, public navCtrl: NavController, public navParams: NavParams, public viewCtrl: ViewController, public formBuilder: FormBuilder) {
     this.formulario = this.crearMiForm();
     this.item = navParams.get('item');
   }
@@ -35,7 +38,16 @@ export class ModalCotizarPage {
  }
 
  guardar(){
+  var body = this.formulario.value;
    console.log(this.formulario);
+   this.http.post('http://prograpedia.com/SendGrid/sendmail.php',body,{})
+   .map(response => response.json())
+   .subscribe(data => {
+        console.log(data.status + " successfull");
+        console.log(data.data + " successfull");
+        console.log(data.headers + " successfull");
+      });
+
  }
 
  private crearMiForm(){

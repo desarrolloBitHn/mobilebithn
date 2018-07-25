@@ -1,15 +1,15 @@
 import { NgModule } from '@angular/core';
 import { IonicPageModule } from 'ionic-angular';
 import {FetchDominiosPage} from './fetch-dominios';
-import { FilterRegistroDominioPipe } from '../../pipes/filter-registro-dominio/filter-registro-dominio';
+import { PipesModule } from '../../pipes/pipes.module';
 
 @NgModule({
   declarations: [
     FetchDominiosPage,
-    FilterRegistroDominioPipe
   ],
   imports: [
     IonicPageModule.forChild(FetchDominiosPage),
+    PipesModule
   ],
 })
 export class FetchDominiosPageModule {
