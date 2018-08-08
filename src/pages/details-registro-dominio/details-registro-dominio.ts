@@ -15,8 +15,16 @@ import { ModalController, IonicPage, NavController, NavParams, Nav } from 'ionic
 })
 export class DetailsRegistroDominioPage {
   item;
+  valor1;
+  diferente = false;
+
   constructor(public modalCtrl: ModalController, public nav: Nav, public navCtrl: NavController, public navParams: NavParams) {
     this.item = navParams.get('item');
+    if(this.item.caracteristicas.length == 0){
+      this.valor1 = this.item.planes[0].valor;
+    } else{
+      this.diferente = true;
+    }
   }
 
 

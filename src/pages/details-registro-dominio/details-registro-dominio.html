@@ -16,6 +16,9 @@
    <button ion-fab (click)="Inicio()"><ion-icon name="ios-home-outline" ></ion-icon></button>
   </ion-fab-list>
   </ion-fab>
+
+
+
   <div class="content" style="background:#14cba8;">
     <ion-card color="detalle1">
       <h1 style="text-align:center;">
@@ -25,97 +28,169 @@
     </ion-card>
   </div>
 
-  <div cards>
-    <div class="grid-full">
-      <ion-row>
-        <ion-col>
-          <ion-card *ngIf="item._1ano">
-            <ion-card-header style="background-color: #212121;">
-              <h1 text-center style="color:#FFFFFF;">1 año</h1>
-            </ion-card-header>
-            <ion-card-content style="background-color: #000000;">
-              <p style="font-size:50px; color:#64FFDA;" text-center> {{item._1ano | currency}} </p>
-                      <div class="item item-body">
-                   <div class="show-list-numbers-and-dots">
-                     <p style="margin-top:0px;color:#000000;">
-                     </p>
-                   </div>
-                 </div>
-                 <button ion-button block color="primary" (click)="cotizar(item)">Contizar ahora</button>
-            </ion-card-content>
-          </ion-card>
-        </ion-col>
-        <ion-col>
-          <ion-card *ngIf="item._2ano">
-            <ion-card-header style="background-color: #212121;">
-              <h1 text-center style="color:#FFFFFF;">2 años</h1>
-            </ion-card-header>
-            <ion-card-content style="background-color: #000000;">
-              <p style="font-size:50px; color:#64FFDA;" text-center> {{item._2ano | currency}} </p>
-                      <div class="item item-body">
-                   <div class="show-list-numbers-and-dots">
-                     <p style="margin-top:0px;color:#000000;">
-                     </p>
-                   </div>
-                 </div>
-                 <button ion-button block color="primary" (click)="cotizar(item)">Contizar ahora</button>
-            </ion-card-content>
-          </ion-card>
-        </ion-col>
-        <ion-col>
-          <ion-card *ngIf="item._3ano">
-            <ion-card-header style="background-color: #212121;">
-              <h1 text-center style="color:#FFFFFF;">3 años</h1>
-            </ion-card-header>
-            <ion-card-content style="background-color: #000000;">
-              <p style="font-size:50px; color:#64FFDA;" text-center> {{item._3ano | currency}} </p>
-                      <div class="item item-body">
-                   <div class="show-list-numbers-and-dots">
-                     <p style="margin-top:0px;color:#000000;">
-                     </p>
-                   </div>
-                 </div>
-                 <button ion-button block color="primary" (click)="cotizar(item)">Contizar ahora</button>
-            </ion-card-content>
-          </ion-card>
-        </ion-col>
-        <ion-col>
-          <ion-card *ngIf="item._5ano">
-            <ion-card-header style="background-color: #212121;">
-              <h1 text-center style="color:#FFFFFF;">5 años</h1>
-            </ion-card-header>
-            <ion-card-content style="background-color: #000000;">
-              <p style="font-size:50px; color:#64FFDA;" text-center> {{item._5ano | currency}} </p>
-                      <div class="item item-body">
-                   <div class="show-list-numbers-and-dots">
-                     <p style="margin-top:0px;color:#000000;">
-                     </p>
-                   </div>
-                 </div>
-                 <button ion-button block color="primary" (click)="cotizar(item)">Contizar ahora</button>
-            </ion-card-content>
-          </ion-card>
-        </ion-col>
-        <ion-col>
-          <ion-card *ngIf="item._10ano">
-            <ion-card-header style="background-color: #212121;">
-              <h1 text-center style="color:#FFFFFF;">10 años</h1>
-            </ion-card-header>
-            <ion-card-content style="background-color: #000000;">
-              <p style="font-size:50px; color:#64FFDA;" text-center> {{item._10ano | currency}} </p>
-                      <div class="item item-body">
-                   <div class="show-list-numbers-and-dots">
-                     <p style="margin-top:0px;color:#000000;">
-                     </p>
-                   </div>
-                 </div>
-                 <button ion-button block color="primary" (click)="cotizar(item)">Contizar ahora</button>
-            </ion-card-content>
-          </ion-card>
-        </ion-col>
-      </ion-row>
+
+
+    <div cards>
+      <div class="grid-full">
+        <ion-row>
+          <ion-col *ngFor="let plan of item.planes; let i = index">
+            <ion-card >
+              <ion-card-header style="background-color: #212121;">
+                <h1 text-center style="color:#FFFFFF;">{{plan.nombre}}</h1>
+              </ion-card-header>
+              <ion-card-content style="background-color: #000000;" >
+                <div  [ngSwitch]="i">
+                  <p style="font-size:50px; color:#64FFDA;" text-center *ngSwitchCase="0">
+                    <label *ngIf="diferente == false">
+                      {{valor1 | currency}}
+                    </label>
+
+                    <label *ngIf="diferente == true">
+                      {{plan.valor | currency}}
+                    </label>
+                  </p>
+                  <p style="font-size:50px; color:#64FFDA;" text-center *ngSwitchCase="1">
+                    <label *ngIf="diferente == false">
+                      {{valor1*2 | currency}}
+                    </label>
+                    <label *ngIf="diferente == true">
+                      {{plan.valor | currency}}
+                    </label>
+                  </p>
+                  <p style="font-size:50px; color:#64FFDA;" text-center *ngSwitchCase="2">
+                    <label *ngIf="diferente == false">
+                      {{valor1*3 | currency}}
+                    </label>
+                    <label *ngIf="diferente == true">
+                      {{plan.valor | currency}}
+                    </label>
+                  </p>
+                  <p style="font-size:50px; color:#64FFDA;" text-center *ngSwitchCase="3">
+                    <label *ngIf="diferente == false">
+                      {{valor1*5 | currency}}
+                    </label>
+                    <label *ngIf="diferente == true">
+                      {{plan.valor | currency}}
+                    </label>
+                  </p>
+                  <p style="font-size:50px; color:#64FFDA;" text-center *ngSwitchCase="4">
+                    <label *ngIf="diferente == false">
+                      {{valor1*10 | currency}}
+                    </label>
+                    <label *ngIf="diferente == true">
+                      {{plan.valor | currency}}
+                    </label>
+                  </p>
+                </div>
+                <div class="item item-body">
+                  <div class="show-list-numbers-and-dots">
+                    <p style="margin-top:0px;color:#000000;">
+                    </p>
+                  </div>
+                </div>
+                <button ion-button block color="primary" (click)="cotizar(item)">Contizar ahora</button>
+              </ion-card-content>
+            </ion-card>
+          </ion-col>
+        </ion-row>
+      </div>
     </div>
-  </div>
+
+
+
+  <!--
+     <div cards>
+       <div class="grid-full">
+         <ion-row>
+           <ion-col>
+             <ion-card *ngIf="item._1ano">
+               <ion-card-header style="background-color: #212121;">
+                 <h1 text-center style="color:#FFFFFF;">1 año</h1>
+               </ion-card-header>
+               <ion-card-content style="background-color: #000000;">
+                 <p style="font-size:50px; color:#64FFDA;" text-center> {{item._1ano | currency}} </p>
+                         <div class="item item-body">
+                      <div class="show-list-numbers-and-dots">
+                        <p style="margin-top:0px;color:#000000;">
+                        </p>
+                      </div>
+                    </div>
+                    <button ion-button block color="primary" (click)="cotizar(item)">Contizar ahora</button>
+               </ion-card-content>
+             </ion-card>
+           </ion-col>
+           <ion-col>
+             <ion-card *ngIf="item._2ano">
+               <ion-card-header style="background-color: #212121;">
+                 <h1 text-center style="color:#FFFFFF;">2 años</h1>
+               </ion-card-header>
+               <ion-card-content style="background-color: #000000;">
+                 <p style="font-size:50px; color:#64FFDA;" text-center> {{item._2ano | currency}} </p>
+                         <div class="item item-body">
+                      <div class="show-list-numbers-and-dots">
+                        <p style="margin-top:0px;color:#000000;">
+                        </p>
+                      </div>
+                    </div>
+                    <button ion-button block color="primary" (click)="cotizar(item)">Contizar ahora</button>
+               </ion-card-content>
+             </ion-card>
+           </ion-col>
+           <ion-col>
+             <ion-card *ngIf="item._3ano">
+               <ion-card-header style="background-color: #212121;">
+                 <h1 text-center style="color:#FFFFFF;">3 años</h1>
+               </ion-card-header>
+               <ion-card-content style="background-color: #000000;">
+                 <p style="font-size:50px; color:#64FFDA;" text-center> {{item._3ano | currency}} </p>
+                         <div class="item item-body">
+                      <div class="show-list-numbers-and-dots">
+                        <p style="margin-top:0px;color:#000000;">
+                        </p>
+                      </div>
+                    </div>
+                    <button ion-button block color="primary" (click)="cotizar(item)">Contizar ahora</button>
+               </ion-card-content>
+             </ion-card>
+           </ion-col>
+           <ion-col>
+             <ion-card *ngIf="item._5ano">
+               <ion-card-header style="background-color: #212121;">
+                 <h1 text-center style="color:#FFFFFF;">5 años</h1>
+               </ion-card-header>
+               <ion-card-content style="background-color: #000000;">
+                 <p style="font-size:50px; color:#64FFDA;" text-center> {{item._5ano | currency}} </p>
+                         <div class="item item-body">
+                      <div class="show-list-numbers-and-dots">
+                        <p style="margin-top:0px;color:#000000;">
+                        </p>
+                      </div>
+                    </div>
+                    <button ion-button block color="primary" (click)="cotizar(item)">Contizar ahora</button>
+               </ion-card-content>
+             </ion-card>
+           </ion-col>
+           <ion-col>
+             <ion-card *ngIf="item._10ano">
+               <ion-card-header style="background-color: #212121;">
+                 <h1 text-center style="color:#FFFFFF;">10 años</h1>
+               </ion-card-header>
+               <ion-card-content style="background-color: #000000;">
+                 <p style="font-size:50px; color:#64FFDA;" text-center> {{item._10ano | currency}} </p>
+                         <div class="item item-body">
+                      <div class="show-list-numbers-and-dots">
+                        <p style="margin-top:0px;color:#000000;">
+                        </p>
+                      </div>
+                    </div>
+                    <button ion-button block color="primary" (click)="cotizar(item)">Contizar ahora</button>
+               </ion-card-content>
+             </ion-card>
+           </ion-col>
+         </ion-row>
+       </div>
+     </div>
+   -->
 
 
 
@@ -130,5 +205,4 @@
 
 
 
-
-</ion-content>
+  </ion-content>

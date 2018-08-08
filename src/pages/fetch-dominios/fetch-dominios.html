@@ -17,6 +17,8 @@
     <ion-fab top right edge>
       <button ion-fab mini color="s-complementary" (click)="Inicio()"><ion-icon name="home" ></ion-icon></button>
     </ion-fab>
+
+
     <div class="content" style="background:#14cba8;">
       <ion-card color="detalle1">
         <ion-item color="detalle1">
@@ -42,15 +44,34 @@
         </ion-card-header>
       </ion-card>
     </div>
+<ion-list radio-group [(ngModel)]="tipoDominio" (ionChange)="cambioRadio($event)">
+  <ion-list-header>
+    Tipo de Dominio
+  </ion-list-header>
+  <ion-item>
+    <ion-label>Registro</ion-label>
+    <ion-radio checked="true" value="Nuevo Registro"></ion-radio>
+  </ion-item>
+  <ion-item>
+    <ion-label>Transferencia</ion-label>
+    <ion-radio value="Transferencias"></ion-radio>
+  </ion-item>
+  <ion-item>
+    <ion-label>Renovaciones</ion-label>
+    <ion-radio value="Renovaciones"></ion-radio>
+  </ion-item>
+  <ion-item>
+    <ion-label>Restauraciones</ion-label>
+    <ion-radio value="Restauraciones"></ion-radio>
+  </ion-item>
+</ion-list>
+
+
+
   <form id="inicio-form1">
-    <div id="inicio-markdown1" class="show-list-numbers-and-dots">
-      <p style="color:#000000;">
-        Las extensiones de domínio más populares {{buscador}}
-      </p>
-    </div>
     <ion-searchbar placeholder="Buscar..." name="" id="inicio-search1" [(ngModel)]="buscador" [ngModelOptions]="{standalone: true}"></ion-searchbar>
   </form>
-  <ion-list id="inicio-list2" *ngFor="let dominio of listadominio | myfilter: buscador">
+  <ion-list id="inicio-list2" *ngFor="let dominio of lista2 | myfilter: buscador">
     <ion-item color="none" id="inicio-list-item7" (click)="detalleDominio(dominio)">
       {{dominio.descripcion}}
       <ion-note item-right></ion-note>
