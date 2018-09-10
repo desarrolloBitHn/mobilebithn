@@ -18,19 +18,24 @@ import { NgxErrorsModule } from '@ultimate/ngxerrors';
 import { Globals } from '../globals';
 import { ServicioService } from '../providers/servicio-service/servicio-service';
 import { File } from '@ionic-native/file';
-
+import { HttpClientModule } from '@angular/common/http';
+import { EqualValidator } from '../directives/equal-validator/equal-validator';
+import { IonicStorageModule } from '@ionic/storage';
 
 
 @NgModule({
   declarations: [
     MyApp,
+    EqualValidator,
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
+    IonicStorageModule.forRoot(),
     AngularFireModule.initializeApp(firebaseConfig1),
     AngularFireDatabaseModule,
     HttpModule,
+    HttpClientModule,
     NgxErrorsModule,
   ],
   bootstrap: [IonicApp],

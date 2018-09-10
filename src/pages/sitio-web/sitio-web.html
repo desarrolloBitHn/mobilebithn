@@ -7,7 +7,7 @@
 
 <ion-header>
 
-  <ion-navbar color="s-light">
+  <ion-navbar color="p-gray">
     <button start ion-button menuToggle="leftMenu">
       <ion-icon name="menu"></ion-icon>
     </button>
@@ -23,13 +23,13 @@
 
   <ion-segment [(ngModel)]="herramientaWeb" color="p-dark" (ionChange)="onSegmentChange($event._value)" >
 
-      <ion-segment-button text-wrap  value="1" >
+      <ion-segment-button text-wrap  value="0" >
         Weebly
       </ion-segment-button>
-      <ion-segment-button text-wrap  value="2" >
+      <ion-segment-button text-wrap  value="1" >
         Constructor Web
       </ion-segment-button>
-      <ion-segment-button text-wrap  value="3" >
+      <ion-segment-button text-wrap  value="2" >
         Impress.Ly
       </ion-segment-button>
 
@@ -39,38 +39,20 @@
 
 <div [ngSwitch]="herramientaWeb">
 
+      <div *ngSwitchCase="0">
 
+        <ion-slides disable-side-menu-drag="" options="{'loop': true}" slider="slider1" delegate-handle="slider1" style="width:100%;height:200px;">
+          <ion-slide >
+            <img [src]="herramienta.imagen" class="slide-image"/>
+          </ion-slide>
+        </ion-slides>
 
-      <div *ngSwitchCase="1">
-
-        <div class="content" style="background:#14cba8;">
-          <ion-card color="detalle1">
-            <ion-item color="detalle1">
-              <h1 text-wrap style="text-align:center;">
-                {{herramienta.nombreherramienta}}
-              </h1>
-            </ion-item>
-          </ion-card>
-        </div>
-
-        <ion-card><img src="./assets/imgs/website1.png" style="width:80%;height:80%;"></ion-card>
-
-        <div class="content" style="background-color: #14cba8;">
-          <ion-card color="detalle1">
-            <ion-card-header>
-              <h1 style="text-align:center;">
-                <ion-icon name="appbithn-shopping-cart"></ion-icon>
-                <ion-icon name="appbithn-film-roll"></ion-icon>
-                <ion-icon name="appbithn-picture"></ion-icon>
-                <ion-icon name="appbithn-placeholder"></ion-icon>
-                <ion-icon name="appbithn-wifi"></ion-icon>
-                <ion-icon name="appbithn-youtube"></ion-icon>
-                <ion-icon name="appbithn-shopping-cart"></ion-icon>
-              </h1>
-            </ion-card-header>
-          </ion-card>
-        </div>
-
+        <ion-list color="p-light">
+          <ion-list-header color="primary" text-wrap>
+            <h2><b>{{herramienta.nombre}}</b></h2>
+            <p>{{herramienta.descripcion}} </p>
+          </ion-list-header>
+        </ion-list>
 
 
         <div cards>
@@ -94,14 +76,14 @@
                     <ion-item id="{{plan.id}}" style="background-color:#181818; display:none;">
                       <p *ngFor="let descript of plan.descripcion" style="color:white;">&#8226; {{descript.descripcion }}</p>
                    </ion-item>
-                    <p style="font-size:50px; color:#64FFDA;" text-center> {{plan.valor | currency}} <label style="font-size:15px;"> / {{plan.unidad}}</label> </p>
+                    <p style="font-size:50px; color:#64FFDA;" text-center> {{plan.valor  | currency}} <label style="font-size:15px;"> / año</label> </p>
                             <div class="item item-body">
                              <div class="show-list-numbers-and-dots">
                                <p style="margin-top:0px;color:#000000;">
                                </p>
                              </div>
                            </div>
-                       <button ion-button block color="primary" (click)="cotizar(plan)">Cotizar ahora</button>
+                       <button ion-button block color="primary" (click)="cotizar(herramienta, plan.id)">Cotizar</button>
                   </ion-card-content>
                 </ion-card>
               </ion-col>
@@ -112,39 +94,20 @@
 
       </div>
 
-      <div *ngSwitchCase="2">
+      <div *ngSwitchCase="1">
 
+        <ion-slides disable-side-menu-drag="" options="{'loop': true}" slider="slider1" delegate-handle="slider1" style="width:100%;height:200px;">
+          <ion-slide >
+            <img [src]="herramienta.imagen" class="slide-image"/>
+          </ion-slide>
+        </ion-slides>
 
-
-
-        <div class="content" style="background:#14cba8;">
-          <ion-card color="detalle1">
-            <ion-item color="detalle1">
-              <h1 text-wrap text-wrap style="text-align:center;">
-                {{herramienta.nombreherramienta}}
-              </h1>
-            </ion-item>
-          </ion-card>
-        </div>
-
-        <ion-card><img src="./assets/imgs/website1.png" style="width:80%;height:80%;"></ion-card>
-
-        <div class="content" style="background-color: #14cba8;">
-          <ion-card color="detalle1">
-            <ion-card-header>
-              <h1 style="text-align:center;">
-                <ion-icon name="appbithn-shopping-cart"></ion-icon>
-                <ion-icon name="appbithn-film-roll"></ion-icon>
-                <ion-icon name="appbithn-picture"></ion-icon>
-                <ion-icon name="appbithn-placeholder"></ion-icon>
-                <ion-icon name="appbithn-wifi"></ion-icon>
-                <ion-icon name="appbithn-youtube"></ion-icon>
-                <ion-icon name="appbithn-shopping-cart"></ion-icon>
-              </h1>
-            </ion-card-header>
-          </ion-card>
-        </div>
-
+        <ion-list color="p-light">
+          <ion-list-header color="primary" text-wrap>
+            <h2><b>{{herramienta.nombre}}</b></h2>
+            <p>{{herramienta.descripcion}} </p>
+          </ion-list-header>
+        </ion-list>
 
         <div cards>
           <div class="grid-full">
@@ -167,14 +130,14 @@
                     <ion-item id="{{plan.id}}" style="background-color:#181818; display:none;">
                       <p *ngFor="let descript of plan.descripcion" style="color:white;">&#8226; {{descript.descripcion }}</p>
                    </ion-item>
-                    <p style="font-size:50px; color:#64FFDA;" text-center> {{plan.valor | currency}} <label style="font-size:15px;"> / {{plan.unidad}}</label> </p>
+                    <p style="font-size:50px; color:#64FFDA;" text-center> {{plan.valor *12 | currency}} <label style="font-size:15px;"> / año</label> </p>
                             <div class="item item-body">
                              <div class="show-list-numbers-and-dots">
                                <p style="margin-top:0px;color:#000000;">
                                </p>
                              </div>
                            </div>
-                       <button ion-button block color="primary" (click)="cotizar(herramienta)">Cotizar ahora</button>
+                       <button ion-button block color="primary" (click)="cotizar(herramienta, plan.id)">Cotizar ahora</button>
                   </ion-card-content>
                 </ion-card>
               </ion-col>
@@ -187,37 +150,20 @@
 
       </div>
 
-      <div *ngSwitchCase="3">
+      <div *ngSwitchCase="2">
 
+        <ion-slides disable-side-menu-drag="" options="{'loop': true}" slider="slider1" delegate-handle="slider1" style="width:100%;height:200px;">
+          <ion-slide >
+            <img [src]="herramienta.imagen" class="slide-image"/>
+          </ion-slide>
+        </ion-slides>
 
-
-        <div class="content" style="background:#14cba8;">
-          <ion-card color="detalle1">
-            <ion-item color="detalle1">
-              <h1 text-wrap text-wrap style="text-align:center;">
-                {{herramienta.nombreherramienta}}
-              </h1>
-            </ion-item>
-          </ion-card>
-        </div>
-
-        <ion-card><img src="./assets/imgs/website1.png" style="width:80%;height:80%;"></ion-card>
-
-        <div class="content" style="background-color: #14cba8;">
-          <ion-card color="detalle1">
-            <ion-card-header>
-              <h1 style="text-align:center;">
-                <ion-icon name="appbithn-shopping-cart"></ion-icon>
-                <ion-icon name="appbithn-film-roll"></ion-icon>
-                <ion-icon name="appbithn-picture"></ion-icon>
-                <ion-icon name="appbithn-placeholder"></ion-icon>
-                <ion-icon name="appbithn-wifi"></ion-icon>
-                <ion-icon name="appbithn-youtube"></ion-icon>
-                <ion-icon name="appbithn-shopping-cart"></ion-icon>
-              </h1>
-            </ion-card-header>
-          </ion-card>
-        </div>
+        <ion-list color="p-light">
+          <ion-list-header color="primary" text-wrap>
+            <h2><b>{{herramienta.nombre}}</b></h2>
+            <p>{{herramienta.descripcion}} </p>
+          </ion-list-header>
+        </ion-list>
 
 
         <div cards>
@@ -241,14 +187,14 @@
                     <ion-item id="{{plan.id}}" style="background-color:#181818; display:none;" >
                       <p *ngFor="let descript of plan.descripcion" style="color:white;">&#8226; {{descript.descripcion }}</p>
                    </ion-item>
-                    <p style="font-size:50px; color:#64FFDA;" text-center> {{plan.valor | currency}} <label style="font-size:15px;"> / {{plan.unidad}}</label> </p>
+                    <p style="font-size:50px; color:#64FFDA;" text-center> {{plan.valor*12 | currency}} <label style="font-size:15px;"> / año</label> </p>
                             <div class="item item-body">
                              <div class="show-list-numbers-and-dots">
                                <p style="margin-top:0px;color:#000000;">
                                </p>
                              </div>
                            </div>
-                       <button ion-button block color="primary" (click)="cotizar(herramienta)">Cotizar ahora</button>
+                       <button ion-button block color="primary" (click)="cotizar(herramienta, plan.id)">Cotizar ahora</button>
                   </ion-card-content>
                 </ion-card>
               </ion-col>

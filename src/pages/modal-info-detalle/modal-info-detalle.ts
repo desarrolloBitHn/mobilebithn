@@ -18,10 +18,10 @@ item;
 tipoInfo;
   constructor(public viewCtrl: ViewController, public navCtrl: NavController, public navParams: NavParams) {
     this.item = navParams.get('item');
-    if (this.item.detalles.length != 0){
+    if (this.item.detalles){
       this.tipoInfo = 2;
     }
-    if (this.item.caracteristicas.length != 0){
+    if (this.item.caracteristicas){
       this.tipoInfo = 1;
     }
 

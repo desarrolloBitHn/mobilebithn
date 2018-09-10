@@ -8,19 +8,30 @@ import 'rxjs/Rx';
 @Injectable()
 export class ServicioService{
 
-  _url: string = "https://firstdb00.firebaseio.com/0/sesion.json";
+  _urlSesion: string = "https://firstdb00.firebaseio.com/0/sesion.json";
 
-  constructor(private http: Http){
+
+  constructor(private http: Http, private httpClient: HttpClient){
 
   }
 
   nuevaSesion(servicio: Servicio){
     let body = JSON.stringify(servicio);
     let _headers = new Headers({'Accept': 'application/json','Content-Type': 'application/json'});
-    return this.http.post(this._url, body, {headers: _headers})
+    return this.http.post(this._urlSesion, body, {headers: _headers})
       .map(res=>{
         console.log(res.json());
         return res.json;
+      });
+  }
+
+  newSession(_servicio: Servicio){
+    let _body = JSON.stringify(_servicio);
+    let _headers = new HttpHeaders({'Accept': 'application/json','Content-Type': 'application/json'});
+    return this.httpClient.post<Servicio>(this._urlSesion, _body, {headers:_headers})
+      .map(res => {
+
+          return res;
       });
   }
 

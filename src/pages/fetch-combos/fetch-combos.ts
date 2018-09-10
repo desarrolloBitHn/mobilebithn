@@ -26,4 +26,8 @@ export class FetchCombosPage {
     console.log('ionViewDidLoad FetchCombosPage');
   }
 
+  clickCard(){
+    console.log("me han presionado");
+  }
+
 }

@@ -20,7 +20,7 @@ export class DetailsRegistroDominioPage {
 
   constructor(public modalCtrl: ModalController, public nav: Nav, public navCtrl: NavController, public navParams: NavParams) {
     this.item = navParams.get('item');
-    if(this.item.caracteristicas.length == 0){
+    if(!this.item.caracteristicas){
       this.valor1 = this.item.planes[0].valor;
     } else{
       this.diferente = true;
@@ -32,8 +32,8 @@ export class DetailsRegistroDominioPage {
     this.nav.setRoot('InicioPage');
   }
 
-  cotizar(_item){
-    const modal = this.modalCtrl.create('ModalCotizarPage', { item: _item });
+  cotizar(_item, _id){
+    const modal = this.modalCtrl.create('ModalCotizarPage', { item: _item, id: _id });
     modal.present();
   }
 

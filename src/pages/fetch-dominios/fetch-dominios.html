@@ -5,7 +5,7 @@
   Ionic pages and navigation.
 -->
 <ion-header>
-  <ion-navbar color="s-light">
+  <ion-navbar color="p-gray">
     <button start ion-button menuToggle="leftMenu">
       <ion-icon name="menu"></ion-icon>
     </button>
@@ -14,62 +14,51 @@
 
 
 <ion-content id="page1">
-    <ion-fab top right edge>
-      <button ion-fab mini color="s-complementary" (click)="Inicio()"><ion-icon name="home" ></ion-icon></button>
-    </ion-fab>
+  <ion-fab top right edge>
+    <button ion-fab mini color="s-complementary" (click)="Inicio()">
+      <ion-icon name="home"></ion-icon>
+    </button>
+  </ion-fab>
 
 
-    <div class="content" style="background:#14cba8;">
-      <ion-card color="detalle1">
-        <ion-item color="detalle1">
-          <h1 text-wrap style="text-align:center;">
-            Dominios disponibles
-          </h1>
-        </ion-item>
-      </ion-card>
-    </div>
-    <ion-card><img src="./assets/imgs/domain1.png" style="width:80%;height:80%;"></ion-card>
-    <div class="content" style="background-color: #14cba8;">
-      <ion-card color="detalle1">
-        <ion-card-header>
-          <h1 style="text-align:center;">
-            <ion-icon name="appbithn-mysql"></ion-icon>
-            <ion-icon name="appbithn-php"></ion-icon>
-            <ion-icon name="appbithn-drupal"></ion-icon>
-            <ion-icon name="appbithn-joomla"></ion-icon>
-            <ion-icon name="appbithn-wordpress"></ion-icon>
-            <ion-icon name="mail"></ion-icon>
-            <ion-icon name="appbithn-shopping-cart"></ion-icon>
-          </h1>
-        </ion-card-header>
-      </ion-card>
-    </div>
-<ion-list radio-group [(ngModel)]="tipoDominio" (ionChange)="cambioRadio($event)">
-  <ion-list-header>
-    Tipo de Dominio
-  </ion-list-header>
-  <ion-item>
-    <ion-label>Registro</ion-label>
-    <ion-radio checked="true" value="Nuevo Registro"></ion-radio>
-  </ion-item>
-  <ion-item>
-    <ion-label>Transferencia</ion-label>
-    <ion-radio value="Transferencias"></ion-radio>
-  </ion-item>
-  <ion-item>
-    <ion-label>Renovaciones</ion-label>
-    <ion-radio value="Renovaciones"></ion-radio>
-  </ion-item>
-  <ion-item>
-    <ion-label>Restauraciones</ion-label>
-    <ion-radio value="Restauraciones"></ion-radio>
-  </ion-item>
-</ion-list>
+  <ion-list radio-group [(ngModel)]="tipoDominio" (ionChange)="cambioRadio($event)">
 
+    <ion-slides disable-side-menu-drag="" options="{'loop': true}" slider="slider1" delegate-handle="slider1"
+                style="width:100%;height:200px;">
+      <ion-slide *ngFor="let _imagen of _listaimagenes">
+        <img [src]="_imagen" class="slide-image"/>
+      </ion-slide>
+    </ion-slides>
+
+    <ion-list color="p-light">
+      <ion-list-header color="primary" text-wrap>
+        <h2><b>{{nombre}}</b></h2>
+        <p text-justify text-wrap>Compra de Dominios de Nivel Superior. (TLD) es la parte de un nombre de dominio que se halla a la derecha del
+          punto. </p>
+      </ion-list-header>
+    </ion-list>
+    <ion-item>
+      <ion-label>Registro</ion-label>
+      <ion-radio value="Nuevo Registro"></ion-radio>
+    </ion-item>
+    <ion-item>
+      <ion-label>Transferencia</ion-label>
+      <ion-radio value="Transferencias"></ion-radio>
+    </ion-item>
+    <ion-item>
+      <ion-label>Renovaciones</ion-label>
+      <ion-radio value="Renovaciones"></ion-radio>
+    </ion-item>
+    <ion-item>
+      <ion-label>Restauraciones</ion-label>
+      <ion-radio value="Restauraciones"></ion-radio>
+    </ion-item>
+  </ion-list>
 
 
   <form id="inicio-form1">
-    <ion-searchbar placeholder="Buscar..." name="" id="inicio-search1" [(ngModel)]="buscador" [ngModelOptions]="{standalone: true}"></ion-searchbar>
+    <ion-searchbar placeholder="Buscar..." name="" id="inicio-search1" [(ngModel)]="buscador"
+                   [ngModelOptions]="{standalone: true}"></ion-searchbar>
   </form>
   <ion-list id="inicio-list2" *ngFor="let dominio of lista2 | myfilter: buscador">
     <ion-item color="none" id="inicio-list-item7" (click)="detalleDominio(dominio)">

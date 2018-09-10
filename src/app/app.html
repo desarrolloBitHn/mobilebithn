@@ -1,4 +1,4 @@
-<ion-menu id="leftMenu"  [content]="content" side="left" type="overlay">
+<ion-menu id="leftMenu" [content]="content" side="left" type="overlay">
   <ion-header>
     <ion-toolbar color="primary">
       <ion-title>
@@ -8,38 +8,48 @@
   </ion-header>
   <ion-content id="side-menu21">
     <ion-list id="menu-list1">
-      <ion-item color="none" menuClose="" *ngFor="let p of pages" on-click="openPage(p)" id="menu-list-item1">
-        <ion-icon name="{{p.icon}}"></ion-icon>
+      <ion-item color="none" menuClose="" *ngFor="let p of pages" on-click="openPage(p)" id="menu-list-item1" text-wrap>
+        <!--  <img ></img>  -->
+        <ion-thumbnail item-start>
+          <img  src="{{p.icon}}" alt="">
+        </ion-thumbnail>
         {{p.title}}
       </ion-item>
     </ion-list>
   </ion-content>
 </ion-menu>
 
-<!--<ion-menu id="rightMenu" [content]="content" side="right" type="reveal">
+<ion-menu id="rightMenu" [content]="content" side="right" type="reveal">
   <ion-header>
     <ion-toolbar>
-      <ion-title>
-        <button color="danger" ion-button  item-end>salir</button>
-      </ion-title>
+      <ion-card>
+        <ion-card-content>
+          <ion-card-title>
+            {{_nombre}}
+          </ion-card-title>
+          <p>
+            {{_correo}}
+          </p>
+        </ion-card-content>
+      </ion-card>
     </ion-toolbar>
   </ion-header>
-  <ion-content>
+  <ion-content id="side-menu2">
     <ion-list>
-      <ion-item  class="item-icon-right" >
-        <h2 class="item-text-wrap">Almacenamiento
-          <p class="item-text-wrap" style="white-space:normal;">Cloud Hosting • 1 año</p>
-          <button ion-button clear item-start>45.40 $</button>
-          <button color="danger" ion-button  item-end>Quitar</button>
-        </h2>
+
+      <ion-item>
+        <ion-item color="none" menuClose="" *ngFor="let p of config" (click)="openPage(p)" id="menu-list-item2">
+          <ion-icon name="{{p.icon}}"></ion-icon>
+          {{p.title}}
+        </ion-item>
+      </ion-item>
+
+      <ion-item color="danger" menuClose="" (click)="logout()">
+        <ion-icon name="log-out"></ion-icon>
+        Salir
       </ion-item>
     </ion-list>
-    <ion-card>
-      <ion-card-content>
-        Tu has pulsado
-      </ion-card-content>
-    </ion-card>
   </ion-content>
-</ion-menu>-->
+</ion-menu>
 
 <ion-nav #content [root]="rootPage" swipeBackEnabled="false"></ion-nav>

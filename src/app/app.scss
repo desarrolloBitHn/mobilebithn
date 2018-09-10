@@ -1,6 +1,5 @@
 // http://ionicframework.com/docs/v2/theming/
 
-
 // App Global Sass
 // --------------------------------------------------
 // Put style rules here that you want to apply globally. These
@@ -15,104 +14,106 @@
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
 
-.toolbar-title{
+.toolbar-title {
   text-align: left;
   font-size: 1.7rem;
 }
 
 .segment-md .segment-button {
-    line-height: 6rem;
-    height: 6.2rem;
-  }
+  line-height: 6rem;
+  height: 6.2rem;
+}
 
 .segment-ios .segment-button {
   line-height: 6rem;
   height: 6.2rem;
 }
 
-
 ion-icon {
-    &[class*="appbithn-"] {
-        // Instead of using the font-based icons
-        // We're applying SVG masks
-        mask-size: contain;
-        mask-position: 50% 50%;
-        mask-repeat: no-repeat;
-        background: currentColor;
-        width: 1em;
-        height: 1em;
-    }
-    // custom icons
-    &[class*="appbithn-server"] {
-        mask-image: url(../assets/imgs/server.svg);
-    }
-    &[class*="appbithn-cloudserver"] {
-        mask-image: url(../assets/imgs/cloud.svg);
-    }
-    &[class*="appbithn-securityservice"] {
-        mask-image: url(../assets/imgs/security.svg);
-    }
-    &[class*="appbithn-domainservice"] {
-        mask-image: url(../assets/imgs/domain.svg);
-    }
-    &[class*="appbithn-websiteservice"] {
-        mask-image: url(../assets/imgs/website.svg);
-    }
-    &[class*="appbithn-discount"] {
-        mask-image: url(../assets/imgs/discount.svg);
-    }
-    &[class*="appbithn-mysql"] {
-        mask-image: url(../assets/imgs/mysql.svg);
-    }
-    &[class*="appbithn-php"] {
-        mask-image: url(../assets/imgs/php.svg);
-    }
-    &[class*="appbithn-drupal"] {
-        mask-image: url(../assets/imgs/drupal-logo.svg);
-    }
-    &[class*="appbithn-joomla"] {
-        mask-image: url(../assets/imgs/joomla.svg);
-    }
-    &[class*="appbithn-wordpress"] {
-        mask-image: url(../assets/imgs/wordpress.svg);
-    }
-    &[class*="appbithn-shopping-cart"] {
-        mask-image: url(../assets/imgs/shopping-cart.svg);
-    }
-    &[class*="appbithn-film-roll"] {
-        mask-image: url(../assets/imgs/film-roll.svg);
-    }
-    &[class*="appbithn-picture"] {
-        mask-image: url(../assets/imgs/picture.svg);
-    }
-    &[class*="appbithn-placeholder"] {
-        mask-image: url(../assets/imgs/placeholder.svg);
-    }
-    &[class*="appbithn-wifi"] {
-        mask-image: url(../assets/imgs/wifi.svg);
-    }
-    &[class*="appbithn-youtube"] {
-        mask-image: url(../assets/imgs/youtube.svg);
-    }
-    &[class*="appbithn-enterprise"] {
-        mask-image: url(../assets/imgs/enterprise.svg);
-    }
-    &[class*="appbithn-equal-sign"] {
-        mask-image: url(../assets/imgs/equal-sign.svg);
-    }
-    &[class*="appbithn-phone-call"] {
-        mask-image: url(../assets/imgs/phone-call.svg);
-    }
-    &[class*="appbithn-smartphone"] {
-        mask-image: url(../assets/imgs/smartphone.svg);
-    }
-    &[class*="appbithn-barcode"] {
-        mask-image: url(../assets/imgs/barcode.svg);
-    }
-    &[class*="appbithn-bill"] {
-        mask-image: url(../assets/imgs/bill.svg);
-    }
-    &[class*="appbithn-money-paper-of-dollars"] {
-        mask-image: url(../assets/imgs/money-paper-of-dollars.svg);
-    }
+  &[class*="appbithn-"] {
+    // Instead of using the font-based icons
+    // We're applying SVG masks
+    mask-size: contain;
+    mask-position: 50% 50%;
+    mask-repeat: no-repeat;
+    background: currentColor;
+    width: 1em;
+    height: 1em;
+  }
+  // custom icons
+  &[class*="appbithn-server"] {
+    mask-image: url(../assets/imgs/server.svg);
+  }
+  &[class*="appbithn-cloudserver"] {
+    mask-image: url(../assets/imgs/cloud.svg);
+  }
+  &[class*="appbithn-securityservice"] {
+    mask-image: url(../assets/imgs/security.svg);
+  }
+  &[class*="appbithn-domainservice"] {
+    mask-image: url(../assets/imgs/domain.svg);
+  }
+  &[class*="appbithn-websiteservice"] {
+    mask-image: url(../assets/imgs/website.svg);
+  }
+  &[class*="appbithn-discount"] {
+    mask-image: url(../assets/imgs/discount.svg);
+  }
+  &[class*="appbithn-mysql"] {
+    mask-image: url(../assets/imgs/mysql.svg);
+  }
+  &[class*="appbithn-php"] {
+    mask-image: url(../assets/imgs/php.svg);
+  }
+  &[class*="appbithn-drupal"] {
+    mask-image: url(../assets/imgs/drupal-logo.svg);
+  }
+  &[class*="appbithn-joomla"] {
+    mask-image: url(../assets/imgs/joomla.svg);
+  }
+  &[class*="appbithn-wordpress"] {
+    mask-image: url(../assets/imgs/wordpress.svg);
+  }
+  &[class*="appbithn-shopping-cart"] {
+    mask-image: url(../assets/imgs/shopping-cart.svg);
+  }
+  &[class*="appbithn-film-roll"] {
+    mask-image: url(../assets/imgs/film-roll.svg);
+  }
+  &[class*="appbithn-picture"] {
+    mask-image: url(../assets/imgs/picture.svg);
+  }
+  &[class*="appbithn-placeholder"] {
+    mask-image: url(../assets/imgs/placeholder.svg);
+  }
+  &[class*="appbithn-wifi"] {
+    mask-image: url(../assets/imgs/wifi.svg);
+  }
+  &[class*="appbithn-youtube"] {
+    mask-image: url(../assets/imgs/youtube.svg);
+  }
+  &[class*="appbithn-enterprise"] {
+    mask-image: url(../assets/imgs/enterprise.svg);
+  }
+  &[class*="appbithn-equal-sign"] {
+    mask-image: url(../assets/imgs/equal-sign.svg);
+  }
+  &[class*="appbithn-phone-call"] {
+    mask-image: url(../assets/imgs/phone-call.svg);
+  }
+  &[class*="appbithn-smartphone"] {
+    mask-image: url(../assets/imgs/smartphone.svg);
+  }
+  &[class*="appbithn-barcode"] {
+    mask-image: url(../assets/imgs/barcode.svg);
+  }
+  &[class*="appbithn-bill"] {
+    mask-image: url(../assets/imgs/bill.svg);
+  }
+  &[class*="appbithn-money-paper-of-dollars"] {
+    mask-image: url(../assets/imgs/money-paper-of-dollars.svg);
+  }
+  &[class*="appbithn-car"] {
+    mask-image: url(../assets/imgs/car-lite.svg);
+  }
 }

@@ -1,4 +1,4 @@
-export interface Servicio {
+export interface Sesion {
   celular:string;
   telefono:string;
   correo:string;
@@ -7,5 +7,4 @@ export interface Servicio {
   nombre:string;
   unidades:number;
   productos:any[];
-
 }

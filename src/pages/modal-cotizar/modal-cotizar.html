@@ -17,9 +17,11 @@
     <button ion-fab mini color="p-complementary" (click)="cerrar()"><ion-icon name="ios-close" ></ion-icon></button>
   </ion-fab>
 
-  <form [formGroup]="formulario" (ngSubmit)="guardar()">
+  <form [formGroup]="formulario" (ngSubmit)="cotizar()">
       <ion-item>
-        <span text-wrap  style="color:red;" >La Cantidad de cuentas debe ser menor a 500</span>
+        <h2 text-wrap  style="color:blue;" >{{item.nombre}}</h2>
+        <h4 text-wrap  style="color:black;">{{item.subtiposervicio}}</h4>
+        <p>{{item.descripcion}}</p>
       </ion-item>
 
       <ion-list>
@@ -39,16 +41,6 @@
               <ion-input formControlName="empresa" type="text" placeholder="mi empresa"></ion-input>
           </ion-item>
           <ion-item>
-              <ion-icon name="appbithn-phone-call" item-start></ion-icon>
-              <ion-label stacked>Teléfono:</ion-label>
-              <ion-input formControlName="telefono" type="tel" placeholder="+50422300000"></ion-input>
-          </ion-item>
-          <ion-item>
-              <ion-icon name="appbithn-smartphone" item-start></ion-icon>
-              <ion-label stacked>Celular:</ion-label>
-              <ion-input formControlName="celular" type="tel" placeholder="+50485656565"></ion-input>
-          </ion-item>
-          <ion-item>
               <ion-icon name="ios-chatbubbles-outline" item-start ></ion-icon>
               <ion-label stacked>Comentario:</ion-label>
               <ion-textarea formControlName="comentario" type="text"></ion-textarea>
@@ -61,17 +53,12 @@
                   <ion-input formControlName="unidades" type="number"></ion-input>
               </ion-item>
             </ion-col>
-            <ion-col>
-              <ion-item>
-                <ion-label style="font-size:32px">/{{item.unidad}}</ion-label>
-              </ion-item>
-            </ion-col>
           </ion-row>
 
       </ion-list>
 
       <div padding>
-        <button ion-button round full type="submit" >Enviar</button>
+        <button ion-button round full type="submit" >Cotizar</button>
       </div>
   </form>
 

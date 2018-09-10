@@ -6,7 +6,7 @@
 -->
 <ion-header>
 
-  <ion-navbar color="s-light">
+  <ion-navbar color="p-gray">
     <button ion-button menuToggle="leftMenu">
       <ion-icon name="menu"></ion-icon>
     </button>
@@ -15,57 +15,68 @@
 
 </ion-header>
 
-
 <ion-content >
   <ion-fab top right edge>
     <button ion-fab mini color="s-complementary" (click)="Inicio()"><ion-icon name="home" ></ion-icon></button>
   </ion-fab>
 
   <ion-segment [(ngModel)]="tipoCorreo" color="p-dark" (ionChange)="onSegmentChange($event._value)">
-    <ion-segment-button value="1" >
+    <ion-segment-button value="2" >
       G Suite
     </ion-segment-button>
-    <ion-segment-button value="2">
+    <ion-segment-button value="3">
       Negocios
     </ion-segment-button>
-    <ion-segment-button value="3">
+    <ion-segment-button value="4">
       Empresarial
     </ion-segment-button>
   </ion-segment>
 
 
       <div [ngSwitch]="tipoCorreo">
-        <div *ngSwitchCase="1">
+        <div *ngSwitchCase="2">
 
-          <div class="content" style="background:#14cba8;">
-            <ion-card color="detalle1">
-              <ion-item color="detalle1">
-                <h1 text-wrap style="text-align:center;">
-                {{item.nombre}}
-                </h1>
-              </ion-item>
-            </ion-card>
-          </div>
-          <ion-card><img src="./assets/imgs/correo1.png" style="width:100%;height:100%;"></ion-card>
+          <ion-slides disable-side-menu-drag="" options="{'loop': true}" slider="slider1" delegate-handle="slider1" style="width:100%;height:200px;">
+            <ion-slide >
+              <img [src]="_listaimagenes" class="slide-image"/>
+            </ion-slide>
+          </ion-slides>
 
+          <ion-list color="p-light">
+            <ion-list-header color="primary" text-wrap>
+              <h2><b>{{item.nombre}}</b></h2>
+              <p>{{item.descripcion}} </p>
+            </ion-list-header>
+          </ion-list>
 
-          <form [formGroup]="formulario" (ngSubmit)="cotizar(formulario)">
+          <form [formGroup]="formulario" (ngSubmit)="cotizar(item)">
             <span  style="color:red;" *ngIf="formulario.controls['cuentas'].hasError('max')">La Cantidad de cuentas debe ser menor a 500</span>
           <ion-list>
             <ion-item>
               <ion-icon name="ios-mail-outline" item-start></ion-icon>
               <ion-label stacked>Cuentas:</ion-label>
-              <ion-input formControlName="cuentas" type="number" placeholder="Cuentas" [(ngModel)]="cuentas" (ngModelChange)="onChangeInput($event)"></ion-input>
+              <ion-input formControlName="cuentas" type="number" placeholder="Cuentas" [(ngModel)]="cuentas" (ionChange)="cuentasImput1($event)"></ion-input> <!--(ngModelChange)="onChangeInput($event)"-->
             </ion-item>
-            <ion-item>
+
+            <!--
+             <ion-item>
               <ion-icon name="calendar" item-start></ion-icon>
               <ion-label stacked>Duración:</ion-label>
               <ion-select  formControlName="duracion"  placeholder="Duración" (ionChange)="onChangeOpction1($event)">
-                <ion-option *ngFor="let mes of meses" [value]="mes.id">{{mes.mes}} mes(-es) <ion-badge *ngIf="mes.mes != 12">{{item.planes[0].valor | currency}}</ion-badge> <ion-badge *ngIf="mes.mes == 12">{{item.planes[0].duracion[0].descuento | currency}}</ion-badge> </ion-option>
-              </ion-select>
+                        <ion-option *ngFor="let mes of meses" [value]="mes.id">{{mes.mes}} mes(-es)   <ion-badge *ngIf="mes.mes != 12">{{item.planes[0].valor | currency}}</ion-badge>  <ion-badge *ngIf="mes.mes == 12">{{item.planes[0].descuento[0].descuento | currency}}</ion-badge> </ion-option>
+                       </ion-select>
             </ion-item>
+             -->
             <ion-item>
-              <ion-icon name="appbithn-equal-sign" item-start></ion-icon>
+              <ion-icon name="calendar" item-start></ion-icon>
+              <ion-label stacked>Duración:</ion-label>
+              <ion-input formControlName="duracion" type="number" placeholder="años" (ionChange)="duracionInput1(duracion)" [(ngModel)]="duracion"></ion-input>
+            </ion-item>
+
+
+
+            <ion-item>
+              <ion-icon name="git-network" item-start></ion-icon>
               <ion-label stacked>Resultado:</ion-label>
               <ion-input formControlName="total" type="text" value="{{total | currency}}" disabled="true" ></ion-input>
             </ion-item>
@@ -85,29 +96,35 @@
           </ion-fab>
         </div>
 
-        <div *ngSwitchCase="2">
+        <div *ngSwitchCase="3">
 
-          <div class="content" style="background:#14cba8;">
-            <ion-card color="detalle1">
-              <ion-item color="detalle1">
-                <h1 text-wrap style="text-align:center;">
-                   {{item.nombre}}
-                </h1>
-              </ion-item>
-            </ion-card>
-          </div>
-          <ion-card><img src="./assets/imgs/correo2.png" style="width:100%;height:100%;"></ion-card>
+          <ion-slides disable-side-menu-drag="" options="{'loop': true}" slider="slider1" delegate-handle="slider1" style="width:100%;height:200px;">
+            <ion-slide >
+              <img [src]="_listaimagenes" class="slide-image"/>
+            </ion-slide>
+          </ion-slides>
+
+          <ion-list color="p-light">
+            <ion-list-header color="primary" text-wrap>
+              <h2><b>{{item.nombre}}</b></h2>
+              <p>{{item.descripcion}} </p>
+            </ion-list-header>
+          </ion-list>
 
 
-          <form [formGroup]="formulario" (ngSubmit)="guardar()">
-            <span style="color:red;" *ngIf="formulario.controls['cuentas'].hasError('max')">La Cantidad de cuentas debe ser menor a 500</span>
+          <form [formGroup]="formulario2" (ngSubmit)="cotizar2(item)">
+            <span style="color:red;" *ngIf="formulario2.controls['cuentas'].hasError('max')">La Cantidad de cuentas debe ser menor a 500</span>
           <ion-list>
             <ion-item>
               <ion-icon name="ios-mail-outline" item-start></ion-icon>
               <ion-label stacked>Cuentas:  </ion-label>
-              <ion-input formControlName="cuentas" type="number" placeholder="Cuentas" [(ngModel)]="cuentas" (ngModelChange)="onChangeInput($event)"></ion-input>
+              <ion-input formControlName="cuentas" type="number" placeholder="Cuentas" [(ngModel)]="cuentas2" (ionChange)="cuentasImput2(cuentas2)"></ion-input>  <!--(ngModelChange)="cuentasImput1($event)"-->
 
             </ion-item>
+
+
+            <!--
+
             <ion-item>
               <ion-icon name="calendar" item-start></ion-icon>
               <ion-label stacked>Duración:</ion-label>
@@ -115,15 +132,25 @@
                 <ion-option *ngFor="let mes of meses"  [value]="mes.id" > {{mes.mes}} mes(-es) <ion-badge>{{valor | currency}}</ion-badge>  </ion-option>
               </ion-select>
             </ion-item>
+
+            -->
+
+
+            <ion-item>
+              <ion-icon name="calendar" item-start></ion-icon>
+              <ion-label stacked>Duración:</ion-label>
+              <ion-input formControlName="duracion" type="number" placeholder="años" (ionChange)="duracionInput2(duracion2)" [(ngModel)]="duracion2"></ion-input>
+            </ion-item>
+
             <ion-item>
               <ion-icon name="git-network" item-start></ion-icon>
               <ion-label stacked>Resultado:</ion-label>
-              <ion-input formControlName="total" type="text" value="{{total | currency}}" disabled="true"></ion-input>
+              <ion-input formControlName="total" type="text" value="{{total2 | currency}}" disabled="true"></ion-input>
             </ion-item>
           </ion-list>
 
           <div padding>
-            <button ion-button round type="submit" full [disabled]="!formulario.valid">Cotizar</button>
+            <button ion-button round type="submit" full [disabled]="!formulario2.valid">Cotizar</button>
           </div>
           </form>
 
@@ -135,43 +162,58 @@
           </ion-fab>
         </div>
 
-        <div *ngSwitchCase="3">
-          <div class="content" style="background:#14cba8;">
-            <ion-card color="detalle1">
-              <ion-item color="detalle1">
-                <h1 text-wrap style="text-align:center;">
-                   {{item.nombre}}
-                </h1>
-              </ion-item>
-            </ion-card>
-          </div>
-          <ion-card><img src="./assets/imgs/correo3.png" style="width:100%;height:100%;"></ion-card>
+        <div *ngSwitchCase="4">
+          <ion-slides disable-side-menu-drag="" options="{'loop': true}" slider="slider1" delegate-handle="slider1" style="width:100%;height:200px;">
+            <ion-slide >
+              <img [src]="_listaimagenes" class="slide-image"/>
+            </ion-slide>
+          </ion-slides>
+          <ion-list color="p-light">
+            <ion-list-header color="primary" text-wrap>
+              <h2><b>{{item.nombre}}</b></h2>
+              <p>{{item.descripcion}} </p>
+            </ion-list-header>
+          </ion-list>
 
 
-          <form [formGroup]="formulario" (ngSubmit)="guardar()">
+          <form [formGroup]="formulario3" (ngSubmit)="cotizar3(item)">
             <span style="color:red;" *ngIf="formulario.controls['cuentas'].hasError('max')">La Cantidad de cuentas debe ser menor a 500</span>
           <ion-list>
             <ion-item>
               <ion-icon name="ios-mail-outline" item-start></ion-icon>
               <ion-label stacked>Cuentas:</ion-label>
-              <ion-input formControlName="cuentas" type="number" placeholder="Cuentas" [(ngModel)]="cuentas" (ngModelChange)="onChangeInput($event)"></ion-input>
+              <ion-input formControlName="cuentas" type="number" placeholder="Cuentas" [(ngModel)]="cuentas3" (ionChange)="cuentasImput3(cuentas3)"></ion-input> <!--(ngModelChange)="onChangeInput($event)"-->
             </ion-item>
+
+
+            <!--
+
             <ion-item>
               <ion-icon name="calendar" item-start></ion-icon>
               <ion-label stacked>Duración:</ion-label>
               <ion-select  formControlName="duracion"  placeholder="Duración" (ionChange)="onChangeOpction($event)">
-                <ion-option *ngFor="let mes of meses"  [value]="mes.id" > {{mes.mes}} mes(-es) <ion-badge>{{valor | currency}}</ion-badge>  </ion-option>
+                <ion-option *ngFor="let mes of meses"  [value]="mes.id" > {{mes.mes}} mes (-es) <ion-badge>{{valor | currency}}</ion-badge>  </ion-option>
               </ion-select>
             </ion-item>
+
+            -->
+
+            <ion-item>
+              <ion-icon name="calendar" item-start></ion-icon>
+              <ion-label stacked>Duración:</ion-label>
+              <ion-input formControlName="duracion" type="number" placeholder="años" (ionChange)="duracionInput3(duracion3)" [(ngModel)]="duracion3"></ion-input>
+            </ion-item>
+
+
             <ion-item>
               <ion-icon name="git-network" item-start></ion-icon>
               <ion-label stacked>Resultado:</ion-label>
-              <ion-input formControlName="total" type="text" value="{{total | currency}}" disabled="true"></ion-input>
+              <ion-input formControlName="total" type="text" value="{{total3 | currency}}" disabled="true"></ion-input>
             </ion-item>
           </ion-list>
 
           <div padding>
-            <button ion-button round full type="submit" [disabled]="!formulario.valid" >Cotizar</button>
+            <button ion-button round full type="submit" [disabled]="!formulario3.valid" >Cotizar</button>
           </div>
 
           </form>
@@ -186,4 +228,6 @@
         </div>
 
     </div>
+
+
   </ion-content>

@@ -6,7 +6,7 @@
 -->
 <ion-header>
 
-  <ion-navbar color="primary">
+  <ion-navbar color="secondary">
     <ion-title></ion-title>
   </ion-navbar>
 
@@ -25,7 +25,7 @@
  <ion-list no-lines *ngFor="let pregunta of item.preguntas">
   <ion-item text-wrap>
     <h2>{{pregunta.pregunta}}</h2>
-    <p>{{pregunta.respuesta}}</p>
+    <p text-justify>{{pregunta.respuesta}}</p>
   </ion-item>
 
 </ion-list>

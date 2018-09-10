@@ -17,6 +17,7 @@ export class ModalPreguntasPage {
 item;
   constructor(public viewCtrl: ViewController, public navCtrl: NavController, public navParams: NavParams) {
     this.item = navParams.get('item');
+    console.log(this.item);
   }
 
   cerrar() {

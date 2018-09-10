@@ -40,8 +40,8 @@ item;
     this.nav.setRoot('InicioPage');
   }
 
-  cotizar(_item){
-    const modal = this.modalCtrl.create('ModalCotizarPage', { item: _item });
+  cotizar(_item, _id){
+    const modal = this.modalCtrl.create('ModalCotizarPage', { item: _item , id: _id});
     modal.present();
   }
 
