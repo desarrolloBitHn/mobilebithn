@@ -23,7 +23,7 @@ export class AppPage {
   constructor(private _toast: ToastController, public http: HttpClient, public _storage: Storage, public formBuilder: FormBuilder, public nav: Nav, public navCtrl: NavController, public navParams: NavParams) {
     this.formulario = this.createMyForm();
     this.formulario.controls["title"].setValue("Cotización de Aplicación Móvil");
-    this._listaimagenes.push("https://www.solbyte.com/blog/wp-content/uploads/Black-Friday-Cyber-Monday-4.png");
+    this._listaimagenes.push("https://preview.ibb.co/kWPwN9/CREACI_N_DE_APP.jpg");
   }
 
   Inicio() {

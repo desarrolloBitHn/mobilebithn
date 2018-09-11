@@ -25,7 +25,7 @@ export class RedessocialesPage {
   constructor(private _toast: ToastController, public http: HttpClient, public _storage: Storage, public formBuilder: FormBuilder, public nav: Nav, public navCtrl: NavController, public navParams: NavParams) {
     this.formulario = this.createMyForm();
     this.formulario.controls["title"].setValue("Cotización de Manejo de Redes Sociales");
-    this._listaimagenes.push("https://i.ytimg.com/vi/4p6YlS122Qg/maxresdefault.jpg");
+    this._listaimagenes.push("https://preview.ibb.co/ccSu9p/manejo_redes_sociales.jpg");
   }
 
   Inicio() {

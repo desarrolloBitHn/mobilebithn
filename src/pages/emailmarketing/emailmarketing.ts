@@ -24,7 +24,7 @@ export class EmailmarketingPage {
   constructor(private _toast: ToastController, public http: HttpClient, public _storage: Storage, public formBuilder: FormBuilder, public nav: Nav, public navCtrl: NavController, public navParams: NavParams) {
     this.formulario = this.createMyForm();
     this.formulario.controls["title"].setValue("Cotización de Email Marketing");
-    this._listaimagenes.push("https://www.quatregrup.com/wp-content/uploads/2018/01/email-marketing-1200x565.jpg");
+    this._listaimagenes.push("https://preview.ibb.co/myd1pp/email_marketing.jpg");
   }
 
   Inicio() {

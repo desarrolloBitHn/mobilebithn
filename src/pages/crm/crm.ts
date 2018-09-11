@@ -25,7 +25,7 @@ export class CrmPage {
   constructor(private _toast: ToastController, public http: HttpClient, public _storage: Storage, public formBuilder: FormBuilder, public nav: Nav, public navCtrl: NavController, public navParams: NavParams) {
     this.formulario = this.createMyForm();
     this.formulario.controls["title"].setValue("Cotización de CRM");
-    this._listaimagenes.push("https://martechforum.com/wp-content/uploads/2015/07/Uso-de-los-CRM-en-Espana.jpg");
+    this._listaimagenes.push("https://preview.ibb.co/cR3Z9p/CRM.jpg");
   }
 
   Inicio() {

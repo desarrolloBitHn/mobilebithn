@@ -24,7 +24,7 @@ export class ErpPage {
   constructor(private _toast: ToastController, public http: HttpClient, public _storage: Storage, public formBuilder: FormBuilder, public nav: Nav, public navCtrl: NavController, public navParams: NavParams) {
     this.formulario = this.createMyForm();
     this.formulario.controls["title"].setValue("Cotización de ERP");
-    this._listaimagenes.push("https://preview.ibb.co/cwsG5K/erp_1.jpg");
+    this._listaimagenes.push("https://preview.ibb.co/i9e7Up/ERP.jpg");
   }
 
   Inicio() {
