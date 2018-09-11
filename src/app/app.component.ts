@@ -18,7 +18,7 @@ export class MyApp {
   private _storage: Storage;
 
   @ViewChild(Nav) nav: Nav;
-    rootPage:any = 'InicioPage';
+    rootPage:any = 'LoginPage';
     _nombre;
     _correo;
     _key;
@@ -43,7 +43,7 @@ export class MyApp {
       { title: 'Manejo de Redes Sociales', component: 'RedessocialesPage' , icon:'./assets/imgs/0109.svg'},
       { title: 'Email Marketing', component: 'EmailmarketingPage' , icon:'./assets/imgs/0110.svg'},
       { title: 'Planeamiento de Recursos Empresariales (ERP)', component: 'ErpPage' , icon:'./assets/imgs/0111.svg'},
-      { title: 'Diseño de Artes', component: 'DiseñoartesPage' , icon:'./assets/imgs/0112.svg'},
+      { title: 'Diseño Gráfico', component: 'DiseñoartesPage' , icon:'./assets/imgs/0112.svg'},
       { title: 'Contáctenos', component: 'FetchLlamanosPage' , icon:'./assets/imgs/0113.svg'}
     ];
 
