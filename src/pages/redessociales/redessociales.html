@@ -1,0 +1,48 @@
+<!--
+  Generated template for the RedessocialesPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="p-gray">
+    <button start ion-button menuToggle="leftMenu">
+      <ion-icon name="menu"></ion-icon>
+    </button>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-fab top right edge>
+    <button ion-fab mini color="s-complementary" (click)="Inicio()"><ion-icon name="home" ></ion-icon></button>
+  </ion-fab>
+
+  <ion-slides disable-side-menu-drag="" options="{'loop': true}" slider="slider1" delegate-handle="slider1" style="width:100%;height:200px;">
+    <ion-slide *ngFor="let _imagen of _listaimagenes" >
+      <img [src]="_imagen" class="slide-image"/>
+    </ion-slide>
+  </ion-slides>
+
+  <form [formGroup]="formulario" (ngSubmit)="sendData()">
+    <ion-list color="p-light">
+      <ion-list-header color="primary" text-wrap>
+        <h2>Manejo de Redes Sociales</h2>
+        <p>Administración de redes sociales para empresas que incluye la planificación, adaptación de contenidos, implementación de estrategias, gestión de campañas entre otros.  </p>
+      </ion-list-header>
+      <ion-item>
+        <ion-label stacked>Título:</ion-label>
+        <ion-input formControlName="title" type="text" placeholder="Contáctenos"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label stacked>Mensaje:</ion-label>
+        <ion-textarea formControlName="message" type="text" placeholder="¿Que podemos hacer por usted?"></ion-textarea>
+      </ion-item>
+    </ion-list>
+    <div padding>
+      <button ion-button block type="submit" [disabled]="!formulario.valid">Cotizar</button>
+    </div>
+  </form>
+</ion-content>

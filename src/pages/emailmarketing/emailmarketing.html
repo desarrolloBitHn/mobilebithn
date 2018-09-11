@@ -1,0 +1,50 @@
+<!--
+  Generated template for the EmailmarketingPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="p-gray">
+    <button start ion-button menuToggle="leftMenu">
+      <ion-icon name="menu"></ion-icon>
+    </button>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <ion-fab top right edge>
+    <button ion-fab mini color="s-complementary" (click)="Inicio()"><ion-icon name="home" ></ion-icon></button>
+  </ion-fab>
+
+  <ion-slides disable-side-menu-drag="" options="{'loop': true}" slider="slider1" delegate-handle="slider1" style="width:100%;height:200px;">
+    <ion-slide *ngFor="let _imagen of _listaimagenes" >
+      <img [src]="_imagen" class="slide-image"/>
+    </ion-slide>
+  </ion-slides>
+
+  <form [formGroup]="formulario" (ngSubmit)="sendData()">
+    <ion-list color="p-light">
+      <ion-list-header color="primary" text-wrap>
+        <h2>Email Marketing</h2>
+        <p>Es una herramienta que esta compuesta por una base de datos de 30,000 suscriptores  la cual se  utiliza para promocionar los servicios o productos de una empresa. </p>
+      </ion-list-header>
+      <ion-item>
+        <ion-label stacked>Título:</ion-label>
+        <ion-input formControlName="title" type="text" placeholder="Contáctenos"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label stacked>Mensaje:</ion-label>
+        <ion-textarea formControlName="message" type="text" placeholder="¿Que podemos hacer por usted?"></ion-textarea>
+      </ion-item>
+    </ion-list>
+    <div padding>
+      <button ion-button block type="submit" [disabled]="!formulario.valid">Cotizar</button>
+    </div>
+  </form>
+
+</ion-content>

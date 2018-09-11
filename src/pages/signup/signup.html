@@ -1,0 +1,98 @@
+<!--
+  Generated template for the SignupPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <form (ngSubmit)="signup()" [formGroup]="form">
+    <ion-list inset>
+
+      <ion-item>
+        <ion-input type="email" placeholder="Correo" formControlName="email" required></ion-input>
+      </ion-item>
+
+      <div *ngIf="!form.controls.email.valid&&form.controls.email.touched">
+        <div>Debe ser un correo válido</div>
+      </div>
+
+      <ion-item>
+        <ion-input type="password" placeholder="Contraseña" formControlName="password" minlength="6" required></ion-input>
+      </ion-item>
+
+      <div *ngIf="!form.controls.password.valid&&form.controls.password.touched">
+        <div >Debe ser al menos de 6 carácteres</div>
+      </div>
+
+      <ion-item>
+        <ion-input type="password" placeholder="Confirmación" formControlName="confirm"  required ></ion-input>
+      </ion-item>
+
+      <div *ngIf="(form.get('confirm').hasError('required') ) && form.get('confirm').touched">
+        <div>Se requiere ingresar la contraseña</div>
+      </div>
+      <div *ngIf="form.get('confirm').hasError('equalTo')&&form.controls.confirm.touched">
+        <div >Debe coincidir con la contraseña</div>
+      </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <ion-item>
+              <ion-input type="text" placeholder="Nombre" formControlName="name"  required></ion-input>
+            </ion-item>
+
+            <div *ngIf="!form.controls.name.valid&&form.controls.name.touched">
+              <div >Debe ingresar el nombre del responsable</div>
+            </div>
+
+            <ion-item>
+              <ion-input type="text" placeholder="Empresa" formControlName="enterprise"></ion-input>
+            </ion-item>
+
+
+            <ion-item>
+              <ion-input type="text" placeholder="Telefono" formControlName="phone" required></ion-input>
+            </ion-item>
+
+            <div *ngIf="!form.controls.phone.valid&&form.controls.phone.touched">
+              <div >Debe ingresar un numero de teléfono fijo</div>
+            </div>
+
+            <ion-item>
+              <ion-input type="text" placeholder="Celular" formControlName="cellphone"></ion-input>
+            </ion-item>
+          </ion-list>
+
+          <div padding-horizontal>
+            <div> {{signupError}}</div>
+
+            <button ion-button full type="submit" [disabled]="!form.valid">Sign up</button>
+          </div>
+        </form>
+
+
+
+      </ion-content>
