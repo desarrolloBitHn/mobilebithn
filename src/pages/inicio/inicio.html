@@ -20,6 +20,9 @@
 
 <ion-content>
 
+  <ion-fab right bottom mini>
+    <button ion-fab mini color="s-complementary" (click)="share()"><ion-icon name="share" ></ion-icon></button>
+  </ion-fab>
 
   <ion-slides disable-side-menu-drag="" options="{'loop': true}" slider="slider1" delegate-handle="slider1" style="width:100%;height:200px;">
     <ion-slide *ngFor="let _imagen of _listaimagenes" >

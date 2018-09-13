@@ -4,6 +4,7 @@ import {Http} from '@angular/http';
 import {HttpClient} from '@angular/common/http';
 import {Sesion} from '../../interfaces/sesion.interface';
 import {Storage} from '@ionic/storage';
+import { SocialSharing } from '@ionic-native/social-sharing';
 
 
 /**
@@ -28,7 +29,7 @@ export class InicioPage {
 
   @ViewChild(Slides) slide: Slides;
 
-  constructor(private _storage: Storage, public httpc: HttpClient, public http: Http, public nav: Nav, public navCtrl: NavController, public navParams: NavParams, public alertCtrl: AlertController) {
+  constructor(private _socialSharing: SocialSharing, private _storage: Storage, public httpc: HttpClient, public http: Http, public nav: Nav, public navCtrl: NavController, public navParams: NavParams, public alertCtrl: AlertController) {
     this.httpc.get(`https://firstdb00.firebaseio.com/0/imagenes/inicio/.json`).subscribe((_data) => {
       for (let key$ in _data){
         this._listaimagenes.push(_data[key$]);
@@ -58,6 +59,13 @@ export class InicioPage {
   }
 
 
+  share(){
+    this._socialSharing.shareViaWhatsApp("Hola, le comparto esta aplicación","","https://play.google.com/store/apps/details?id=hn.punto.app").then((_datos) => {
+      console.log(_datos);
+    }).catch(() => {
+      // Sharing via email is not possible
+    });
+  }
 
   escribirArchivo(_body) {
     console.log("cuerpo" + _body);
