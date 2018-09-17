@@ -22,6 +22,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { EqualValidator } from '../directives/equal-validator/equal-validator';
 import { IonicStorageModule } from '@ionic/storage';
 import { SocialSharing } from '@ionic-native/social-sharing';
+import { InAppBrowser } from '@ionic-native/in-app-browser';
 
 
 @NgModule({
@@ -56,7 +57,8 @@ import { SocialSharing } from '@ionic-native/social-sharing';
     Globals,
     ServicioService,
     File,
-    SocialSharing
+    SocialSharing,
+    InAppBrowser
   ]
 })
 export class AppModule {}
