@@ -33,8 +33,7 @@
     <ion-list color="p-light">
       <ion-list-header color="primary" text-wrap>
         <h2><b>{{nombre}}</b></h2>
-        <p text-justify text-wrap>Compra de Dominios de Nivel Superior. (TLD) es la parte de un nombre de dominio que se halla a la derecha del
-          punto. </p>
+        <p text-justify text-wrap>Es la etiqueta o nombre definido por las empresas o personas naturales para identificar o localizar un sitio web a través del internet. </p>
       </ion-list-header>
     </ion-list>
     <ion-item>
@@ -55,11 +54,19 @@
     </ion-item>
   </ion-list>
 
-
-  <form id="inicio-form1">
+  <div *ngIf="tipoDominio=='Nuevo Registro'">
+    <a ion-item href="https://punto.hn/domain.php?action=whois">
+      verificar
+      Verificar Disponibilidad
+    </a>
+  </div>
+<!--
+<form id="inicio-form1" >
     <ion-searchbar placeholder="Buscar..." name="" id="inicio-search1" [(ngModel)]="buscador"
                    [ngModelOptions]="{standalone: true}"></ion-searchbar>
   </form>
+-->
+
   <ion-list id="inicio-list2" *ngFor="let dominio of lista2 | myfilter: buscador">
     <ion-item color="none" id="inicio-list-item7" (click)="detalleDominio(dominio)">
       {{dominio.descripcion}}
