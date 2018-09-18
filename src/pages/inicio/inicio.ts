@@ -67,6 +67,7 @@ export class InicioPage {
     });
   }
 
+
   escribirArchivo(_body) {
     console.log("cuerpo" + _body);
     this.http.post('https://firstdb00.firebaseio.com/0/sesion.json', _body)

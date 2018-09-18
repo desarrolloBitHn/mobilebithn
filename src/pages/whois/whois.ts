@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { InAppBrowser } from '@ionic-native/in-app-browser';
+
 
 /**
  * Generated class for the WhoisPage page.
@@ -15,10 +17,15 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class WhoisPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private iab: InAppBrowser) {
+   // $('#loadExternalURL').load('https://punto.hn/domain.php?action=whois');
+    const browser = this.iab.create('https://punto.hn/domain.php?action=whois', '_system');
+    browser.show();
+
   }
 
   ionViewDidLoad() {
+
     console.log('ionViewDidLoad WhoisPage');
   }
 

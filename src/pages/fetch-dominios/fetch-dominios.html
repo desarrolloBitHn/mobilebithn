@@ -55,11 +55,9 @@
   </ion-list>
 
   <div *ngIf="tipoDominio=='Nuevo Registro'">
-    <a ion-item href="https://punto.hn/domain.php?action=whois">
-      verificar
-      Verificar Disponibilidad
-    </a>
+    <button ion-button full icon-end (click)="whois()">Verificar Disponibilidad <ion-icon name="star"></ion-icon></button>
   </div>
+
 <!--
 <form id="inicio-form1" >
     <ion-searchbar placeholder="Buscar..." name="" id="inicio-search1" [(ngModel)]="buscador"

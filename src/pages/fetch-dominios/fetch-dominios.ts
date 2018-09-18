@@ -56,6 +56,10 @@ export class FetchDominiosPage {
     this.nav.setRoot('InicioPage');
   }
 
+  whois(){
+    this.navCtrl.push('WhoisPage');
+  }
+
   detalleDominio(parametro) {
 
     if (!parametro) parametro = {};
