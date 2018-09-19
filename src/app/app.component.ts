@@ -18,7 +18,7 @@ export class MyApp {
   private _storage: Storage;
 
   @ViewChild(Nav) nav: Nav;
-    rootPage:any = 'LoginPage';
+    rootPage:any = 'SitioWebPage';
     _nombre;
     _correo;
     _key;
