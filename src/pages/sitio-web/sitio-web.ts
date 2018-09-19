@@ -30,8 +30,8 @@ export class SitioWebPage {
           }
         }
         console.log(this.basedatos1);
-        this.herramientaWeb = 0;
-        this.onSegmentChange(0);
+        this.herramientaWeb = 2;
+        this.onSegmentChange(2);
       }
     );
   }
