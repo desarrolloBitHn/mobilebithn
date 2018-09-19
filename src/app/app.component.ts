@@ -37,7 +37,7 @@ export class MyApp {
       { title: 'Seguridad', component: 'SeguridadPage' , icon:'./assets/imgs/0106.svg'},
       { title: 'Alojamiento en la Nube', component: 'CloudPage' , icon:'./assets/imgs/0103.svg'},
       { title: 'Correo', component: 'CorreoPage' , icon:'./assets/imgs/0105.svg'},
-      { title: 'Constructor Sitios Web', component: 'SitioWebPage' , icon:'./assets/imgs/0104.svg'},
+      { title: 'Sitios Web', component: 'SitioWebPage' , icon:'./assets/imgs/0104.svg'},
       { title: 'Gestión de Relación con los Clientes (CRM)', component: 'CrmPage' , icon:'./assets/imgs/0107.svg'},
       { title: 'Desarrollo de Aplicaciones Móbiles (APP)', component: 'AppPage' , icon:'./assets/imgs/0108.svg'},
       { title: 'Manejo de Redes Sociales', component: 'RedessocialesPage' , icon:'./assets/imgs/0109.svg'},
