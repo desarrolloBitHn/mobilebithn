@@ -63,8 +63,8 @@
                     <button ion-fab mini color="p-complementary" (click)="detalleAbajo(plan.id)"><ion-icon id="icon_{{plan.id}}" name="md-arrow-round-down"></ion-icon></button>
                   </ion-fab>
 
-                  <ion-item id="{{plan.id}}" style="background-color:#181818; display:none;">
-                    <p *ngFor="let descript of plan.descripcion" style="color:white;">&#8226; {{descript.detalle}}</p>
+                  <ion-item id="{{plan.id}}" style="background-color:#181818; display:none;" text-wrap>
+                    <p *ngFor="let descript of plan.descripcion" style="color:white;" >&#8226; {{descript.detalle}}</p>
                  </ion-item>
                   <p style="font-size:50px; color:#64FFDA;" text-center> {{plan.valor | currency}} <label style="font-size:15px;"> / {{plan.unidad}}</label> </p>
                           <div class="item item-body">
@@ -112,8 +112,8 @@
                     <button ion-fab mini color="p-complementary" (click)="detalleAbajo(plan.id)"><ion-icon id="icon_{{plan.id}}" name="md-arrow-round-down"></ion-icon></button>
                   </ion-fab>
 
-                <ion-item id="{{plan.id}}" style="background-color:#181818; display:none;">
-                  <p *ngFor="let descript of plan.descripcion" style="color:white;">&#8226; {{descript.detalle }}</p>
+                <ion-item id="{{plan.id}}" style="background-color:#181818; display:none;" text-wrap>
+                  <p *ngFor="let descript of plan.descripcion" style="color:white;" >&#8226; {{descript.detalle }}</p>
                </ion-item>
                 <p style="font-size:50px; color:#64FFDA;" text-center> {{plan.valor | currency}} <label style="font-size:15px;"> / {{plan.unidad}}</label> </p>
                         <div class="item item-body">
@@ -162,8 +162,8 @@
                   <button ion-fab mini color="p-complementary" (click)="detalleAbajo(plan.id)"><ion-icon id="icon_{{plan.id}}" name="md-arrow-round-down"></ion-icon></button>
                 </ion-fab>
 
-                <ion-item id="{{plan.id}}" style="background-color:#181818; display:none;">
-                  <p *ngFor="let descript of plan.descripcion" style="color:white;">&#8226; {{descript.detalle }}</p>
+                <ion-item id="{{plan.id}}" style="background-color:#181818; display:none;" text-wrap>
+                  <p *ngFor="let descript of plan.descripcion" style="color:white;" >&#8226; {{descript.detalle }}</p>
                </ion-item>
                 <p style="font-size:50px; color:#64FFDA;" text-center> {{plan.valor * 12 | currency}} <label style="font-size:15px;"> / año</label> </p>
                         <div class="item item-body">
