@@ -38,10 +38,18 @@ export class ModalCotizarPage {
   meses = "";
   total = 0;
 
+  mostrar1=false;
+  mensaje = "";
+
 
   constructor( private menu: MenuController, private _storage: Storage, private auth: AuthServiceProvider, private _servicio: ServicioService, private toast: Toast, private _toast: ToastController, private http: HttpClient, private emailComposer: EmailComposer, public navCtrl: NavController, public navParams: NavParams, public viewCtrl: ViewController, public formBuilder: FormBuilder) {
     this.formulario = this.crearMiForm();
     this.item = navParams.get('item');
+    console.log(this.item.tiposervicio == "Precio Dominio" &&  this.item.subtiposervicio == "Renovaciones");
+    if (this.item.tiposervicio == "Precio Dominio" &&  this.item.subtiposervicio == "Renovaciones"){
+        this.mostrar1=true;
+        this.mensaje = "Especifique que dominio desea renovar en el comentario";
+    }
     this.id = navParams.get('id');
     this.extra = navParams.get('extra');
     console.log(this.item);

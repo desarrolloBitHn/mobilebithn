@@ -23,7 +23,9 @@
         <h4 text-wrap  style="color:black;">{{item.subtiposervicio}}</h4>
         <p>{{item.descripcion}}</p>
       </ion-item>
-
+    <ion-item *ngIf="mostrar1" text-wrap>
+      <p style="color:red;">{{mensaje}}</p>
+    </ion-item>
       <ion-list>
           <ion-item>
               <ion-icon name="md-person" item-start></ion-icon>
@@ -48,8 +50,8 @@
           <ion-row>
             <ion-col>
               <ion-item>
-                  <ion-icon name="appbithn-barcode" item-start></ion-icon>
-                  <ion-label stacked>Unidades:</ion-label>
+                  <ion-icon name="ios-calendar-outline" item-start></ion-icon>
+                  <ion-label stacked>Años:</ion-label>
                   <ion-input formControlName="unidades" type="number"></ion-input>
               </ion-item>
             </ion-col>

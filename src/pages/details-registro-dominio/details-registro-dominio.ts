@@ -18,6 +18,7 @@ export class DetailsRegistroDominioPage {
   valor1;
   diferente = false;
 
+
   constructor(public modalCtrl: ModalController, public nav: Nav, public navCtrl: NavController, public navParams: NavParams) {
     this.item = navParams.get('item');
     if(!this.item.caracteristicas){
@@ -25,6 +26,7 @@ export class DetailsRegistroDominioPage {
     } else{
       this.diferente = true;
     }
+
   }
 
 

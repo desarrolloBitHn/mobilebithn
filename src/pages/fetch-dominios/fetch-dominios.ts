@@ -93,6 +93,7 @@ export class FetchDominiosPage {
         this.lista2.push(this.listadominio1[i]);
       }
     }
+    console.log(this.lista2);
   }
 
   ionViewDidLoad() {
