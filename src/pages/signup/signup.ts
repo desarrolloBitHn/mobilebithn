@@ -21,6 +21,12 @@ import { Storage } from '@ionic/storage';
 export class SignupPage {
   signupError: string;
   form: FormGroup;
+  inputType = 'password';
+  iconPasswor = 'eye';
+  inputTypeConfirm = 'password';
+  iconConfirm = 'eye';
+
+
   constructor(private menu: MenuController, private _storage: Storage, public http: HttpClient, public navCtrl: NavController, public navParams: NavParams, fb: FormBuilder, private auth: AuthServiceProvider) {
     this.form = fb.group({
       email: ['', Validators.compose([Validators.required, Validators.email])],
@@ -37,6 +43,26 @@ export class SignupPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad SignupPage');
   };
+
+  showPass(){
+    if (this.inputType == 'password') {
+      this.inputType = 'text';
+      this.iconPasswor = 'eye-off';
+    }else{
+      this.inputType = 'password';
+      this.iconPasswor = 'eye';
+    }
+  }
+
+  showConfirm(){
+    if (this.inputTypeConfirm == 'password') {
+      this.inputTypeConfirm = 'text';
+      this.iconConfirm = 'eye-off';
+    }else{
+      this.inputTypeConfirm = 'password';
+      this.iconConfirm = 'eye';
+    }
+  }
 
   signup(){
     let data = this.form.value;
