@@ -3,7 +3,6 @@ import {AngularFireAuth} from 'angularfire2/auth';
 import {FirebaseAuth} from 'firebase/auth';
 import * as firebase from 'firebase/app';
 
-
 /*
   Generated class for the AuthServiceProvider provider.
 
@@ -45,6 +44,21 @@ export class AuthServiceProvider {
   signOut(): Promise<void> {
     return this.afAuth.auth.signOut();
   }
+
+  get instance() {
+    return this.afAuth.auth;
+  }
+
+  get _user(): firebase.User {
+    return this.authenticated ? this.user : null;
+  }
+
+  get authenticated(): boolean {
+    return this.user !== null;
+  }
+
+
+
 
 
 }

@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, MenuController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, MenuController, Nav } from 'ionic-angular';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { AuthServiceProvider } from '../../providers/auth-service/auth-service';
 import { Storage } from '@ionic/storage';
+
 
 
 /**
@@ -21,18 +22,43 @@ export class LoginPage {
   user_id:any;
   loginForm: FormGroup;
   loginError: string;
+  inputType = 'password';
+  iconPasswor = 'eye';
 
-  constructor(public _storage:Storage, public navCtrl: NavController, public navParams: NavParams, fb: FormBuilder, private auth: AuthServiceProvider, private menu: MenuController) {
+  constructor(public _storage:Storage, public navCtrl: NavController, public navParams: NavParams, fb: FormBuilder, private auth: AuthServiceProvider, private menu: MenuController, private nav: Nav) {
     this.menu.enable(false, "leftMenu");
     this.menu.enable(false, "rightMenu");
     this.loginForm = fb.group({
     			email: ['', Validators.compose([Validators.required, Validators.email])],
     			password: ['', Validators.compose([Validators.required, Validators.minLength(6)])]
     		});
+
+    let loginPage = this;
+    auth.instance.onAuthStateChanged(function(user) {
+      if (user) {
+        loginPage.menu.enable(true, "leftMenu");
+        loginPage.menu.enable(true, "rightMenu");
+        loginPage.navCtrl.setRoot('InicioPage'); //to the page where user navigates after login
+        console.log('User is signed in.');
+      } else {
+        //this.nav.setRoot('LoginPage'); // to the login page as user is not logged in
+        console.log('No user is signed in.');
+      }
+    });
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad LoginPage');
+
+  }
+
+  showPass(){
+    if (this.inputType == 'password') {
+      this.inputType = 'text';
+      this.iconPasswor = 'eye-off';
+    }else{
+      this.inputType = 'password';
+      this.iconPasswor = 'eye';
+    }
   }
 
 
