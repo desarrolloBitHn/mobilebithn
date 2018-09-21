@@ -58,6 +58,15 @@
     <button ion-button full icon-end (click)="whois()" text-wrap>Presiona aquí para verificar disponibilidad <ion-icon name="arrow-forward"></ion-icon></button>
   </div>
 
+  <div *ngIf="tipoDominio=='Transferencias'">
+    <ion-list color="p-light">
+      <ion-list-header color="primary" text-wrap>
+        <h2><b>IMPORTANTE</b></h2>
+        <p text-justify text-wrap>Si desea transferir su dominio a otro Comercializador el titular del dominio deberá enviar una carta firmada y sellada en papel membretado  solicitando la transferencia del dominio al correo servicios@bit.hn. </p>
+      </ion-list-header>
+    </ion-list>
+  </div>
+
 <!--
 <form id="inicio-form1" >
     <ion-searchbar placeholder="Buscar..." name="" id="inicio-search1" [(ngModel)]="buscador"
