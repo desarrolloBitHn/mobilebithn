@@ -23,8 +23,16 @@
         <h4 text-wrap  style="color:black;">{{item.subtiposervicio}}</h4>
         <p>{{item.descripcion}}</p>
       </ion-item>
-    <ion-item *ngIf="mostrar1" text-wrap>
-      <p style="color:red;">{{mensaje}}</p>
+    <div *ngIf="mostrar1" >
+      <ion-list color="p-light">
+        <ion-list-header color="primary" text-wrap>
+          <h2><b>IMPORTANTE</b></h2>
+          <p text-justify text-wrap>{{mensaje}}</p>
+        </ion-list-header>
+      </ion-list>
+    </div>
+    <ion-item text-wrap>
+      <p style="color:red;"></p>
     </ion-item>
       <ion-list>
           <ion-item>

@@ -48,7 +48,10 @@ export class ModalCotizarPage {
     console.log(this.item.tiposervicio == "Precio Dominio" &&  this.item.subtiposervicio == "Renovaciones");
     if (this.item.tiposervicio == "Precio Dominio" &&  this.item.subtiposervicio == "Renovaciones"){
         this.mostrar1=true;
-        this.mensaje = "Especifique que dominio desea renovar en el comentario";
+        this.mensaje = "Se debe especificar el dominio que se desea renovar en el comentario";
+    } else if (this.item.tiposervicio == "Precio Dominio" &&  this.item.subtiposervicio == "Restauraciones"){
+      this.mostrar1=true;
+      this.mensaje = "Expirado la vigencia del registro de nombre de dominio, el sistema automáticamente opera la acción de suspensión, plazo este que tiene una duración de cuatro (4) días contados a partir de la fecha de expiración; su reactivación solo procede previo el pago del valor del dominio. De no activarse la reactivación del dominio, al quinto día el sistema automáticamente pasa el dominio al estado de pending delete, proceso que puede ser restaurado previo pago del dominio más un cargo del 20% tasado sobre el valor del dominio por la restauración del mismo. De no restaurarse el dominio en los términos precitado el sistema automáticamente libera el dominio y este puede ser adquirido por un tercero, con el riesgo que su titular no pueda recuperarlo a razón del principio primero en llegar primero en ser servido.";
     }
     this.id = navParams.get('id');
     this.extra = navParams.get('extra');
