@@ -22,7 +22,9 @@
 
       <ion-item >
         <ion-input [type]="inputType" placeholder="Password" formControlName="password"></ion-input>
-        <ion-icon [name]="iconPasswor" item-end (click)="showPass()"></ion-icon>
+        <button ion-button clear item-end (click)='showPass()' style="height:32px;">
+          <ion-icon [name]="iconPasswor" style="font-size:32px;"></ion-icon>
+        </button>
       </ion-item>
     </ion-list>
 

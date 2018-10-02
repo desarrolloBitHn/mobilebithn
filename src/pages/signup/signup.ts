@@ -85,6 +85,7 @@ export class SignupPage {
             this._storage.set('email',this.form.controls["email"].value);
           });
         this.menu.enable(true, "leftMenu");
+        this.menu.enable(true, "rightMenu");
         this.navCtrl.setRoot('InicioPage')
       },
       error => this.signupError = error.message
