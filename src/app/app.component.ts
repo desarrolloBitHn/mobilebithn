@@ -33,7 +33,7 @@ export class MyApp {
     this._storage = storage;
     this.pages = [
       { title: 'Dominios', component: 'FetchDominiosPage', icon:'./assets/imgs/0101.svg'},
-      { title: 'Alojamientos', component: 'FetchAlojamientosPage' , icon:'./assets/imgs/0102.svg'},
+      { title: 'Alojamiento', component: 'FetchAlojamientosPage' , icon:'./assets/imgs/0102.svg'},
       { title: 'Seguridad', component: 'SeguridadPage' , icon:'./assets/imgs/0106.svg'},
       { title: 'Alojamiento en la Nube', component: 'CloudPage' , icon:'./assets/imgs/0103.svg'},
       { title: 'Correo', component: 'CorreoPage' , icon:'./assets/imgs/0105.svg'},
