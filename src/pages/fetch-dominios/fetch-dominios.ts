@@ -2,6 +2,7 @@ import {Component} from '@angular/core';
 import {IonicPage, NavController, NavParams, ModalController, Nav} from 'ionic-angular';
 import {HttpClient} from '@angular/common/http';
 import {Toast} from '@ionic-native/toast';
+import { InAppBrowser } from '@ionic-native/in-app-browser';
 
 declare var jquery: any;
 declare var $: any;
@@ -27,7 +28,7 @@ export class FetchDominiosPage {
   nombre;
   descripcion;
 
-  constructor(private http:HttpClient, private toast: Toast, public nav: Nav, public modalCrtl: ModalController, public navCtrl: NavController, public navParams: NavParams) {
+  constructor(private iab: InAppBrowser, private http:HttpClient, private toast: Toast, public nav: Nav, public modalCrtl: ModalController, public navCtrl: NavController, public navParams: NavParams) {
   this.http.get('https://firstdb00.firebaseio.com/0/Servicios.json').subscribe(
     (_data) => {
       for(let key$ in _data){
@@ -57,7 +58,9 @@ export class FetchDominiosPage {
   }
 
   whois(){
-    this.navCtrl.push('WhoisPage');
+    //this.navCtrl.push('WhoisPage');
+    const browser = this.iab.create('https://punto.hn/domain.php?action=whois', '_system');
+    browser.show();
   }
 
   detalleDominio(parametro) {

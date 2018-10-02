@@ -67,6 +67,24 @@
     </ion-list>
   </div>
 
+  <div *ngIf="tipoDominio=='Renovaciones'">
+    <ion-list color="p-light">
+      <ion-list-header color="primary" text-wrap>
+        <h2><b>IMPORTANTE</b></h2>
+        <p text-justify text-wrap>Se debe especificar el dominio que se requiere renovar al momento de cotizar. </p>
+      </ion-list-header>
+    </ion-list>
+  </div>
+
+  <div *ngIf="tipoDominio=='Restauraciones'">
+    <ion-list color="p-light">
+      <ion-list-header color="primary" text-wrap>
+        <h2><b>IMPORTANTE</b></h2>
+        <p text-justify text-wrap>Expirado la vigencia del registro de nombre de dominio, el sistema automáticamente opera la acción de suspensión, plazo este que tiene una duración de cuatro (4) días contados a partir de la fecha de expiración; su reactivación solo procede previo el pago del valor del dominio. De no activarse la reactivación del dominio, al quinto día el sistema automáticamente pasa el dominio al estado de pending delete, proceso que puede ser restaurado previo pago del dominio más un cargo del 20% tasado sobre el valor del dominio por la restauración del mismo. De no restaurarse el dominio en los términos precitado el sistema automáticamente libera el dominio y este puede ser adquirido por un tercero, con el riesgo que su titular no pueda recuperarlo a razón del principio primero en llegar primero en ser servido. </p>
+      </ion-list-header>
+    </ion-list>
+  </div>
+
 <!--
 <form id="inicio-form1" >
     <ion-searchbar placeholder="Buscar..." name="" id="inicio-search1" [(ngModel)]="buscador"
