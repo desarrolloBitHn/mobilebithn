@@ -60,7 +60,7 @@ export class InicioPage {
 
 
   share(){
-    this._socialSharing.shareViaWhatsApp("Hola, le comparto esta aplicación","","https://play.google.com/store/apps/details?id=hn.punto.app").then((_datos) => {
+    this._socialSharing.share("Hola, te comparto esta aplicación","Punto HN", "", "https://play.google.com/store/apps/details?id=hn.punto.app").then((_datos) => {
       console.log(_datos);
     }).catch(() => {
       // Sharing via email is not possible
